@@ -52,6 +52,10 @@ add_shortcode('mi_year', function () {
 	return date('Y');
 });
 
+add_shortcode( 'copyright', function ( $atts ) {
+	return sprintf( '<span>© %s kompetenzzentrum Demenz in Schleswig-Holstein</span>', date( 'Y' ) );
+} );
+
 add_shortcode( 'mi_bank', function ( $atts ) {
 	$atts   = shortcode_atts( array(
 		'format' => 'block',
