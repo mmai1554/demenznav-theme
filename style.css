@@ -26,3 +26,72 @@ a.skip-main { left: -999px; position: absolute; top: auto; width: 1px; height: 1
 a.skip-main:focus, a.skip-main:active { color: #000; background-color: #FFF; left: auto; top: auto; width: 30%; height: auto; overflow: auto; margin: 10px 35%; padding: 5px; border-radius: 15px; border: 3px solid #c13523; text-align: center; font-size: 1.2em; z-index: 999; }
 
 a:hover, .fl-builder a:hover { text-decoration: underline; }
+
+#mapcontainer { position: relative; width: 800px; height: 800px; background-image: url("/wp-content/themes/demenznav-theme/assets/bgmap_sprited.png"); background-position: -1px 0px; }
+
+#shmap { position: relative; width: 800px; height: 800px; background-image: url("/wp-content/themes/demenznav-theme/assets/bgmap_sprited.png"); background-position: -1px 0px; }
+#shmap img { position: absolute; z-index: 1000; }
+#shmap area, #shmap map { outline: none; }
+
+#legende div.legende { font-size: 0.8em; display: inline-block; position: absolute; color: #423d3d; }
+#legende div.highlight { color: #333; text-decoration: underline; }
+
+#legende_NF { top: 250px; left: 178px; }
+
+#legende_FL { top: 140px; left: 305px; }
+
+#legende_SLFL { top: 200px; left: 270px; }
+
+#legende_DITH { top: 410px; left: 178px; }
+
+#legende_RDECK { top: 350px; left: 315px; }
+
+#legende_KI { top: 350px; left: 470px; }
+
+#legende_NMS { top: 440px; left: 435px; }
+
+#legende_PLOE { top: 380px; left: 520px; }
+
+#legende_OH { top: 400px; left: 630px; }
+
+#legende_STE { top: 510px; left: 288px; }
+
+#legende_SE { top: 510px; left: 460px; }
+
+#legende_HL { top: 540px; left: 610px; }
+
+#legende_PI { top: 610px; left: 350px; }
+
+#legende_STO { top: 590px; left: 495px; }
+
+#legende_LAU { top: 680px; left: 540px; }
+
+#mapcontainer div.NF { background-position: -800px 0px; }
+
+#mapcontainer div.FL { background-position: -1598px 0px; }
+
+#mapcontainer div.SLFL { background-position: -2398px 0px; }
+
+#mapcontainer div.DITH { background-position: -3198px 0px; }
+
+#mapcontainer div.RDECK { background-position: -3997px 0px; }
+
+#mapcontainer div.KI { background-position: -4796px 0px; }
+
+#mapcontainer div.NMS { background-position: -5595.5px 0px; }
+
+#mapcontainer div.PLOE { background-position: -6395px 0px; }
+
+#mapcontainer div.OH { background-position: -7194px 0px; }
+
+#mapcontainer div.STE { background-position: -7993px 0px; }
+
+#mapcontainer div.SE { background-position: -8792px 0px; }
+
+#mapcontainer div.HL { background-position: -9591.5px 0px; }
+
+#mapcontainer div.PI { background-position: -10391px 0px; }
+
+#mapcontainer div.STO { background-position: -11190px 0px; }
+
+#mapcontainer div.LAU { background-position: -11989px 0px; }
