@@ -9,3 +9,44 @@ Template: bb-theme
 @import "mi_mixins";
 @import "accessibility";
 @import "kartesh";
+
+$color1: hsla(9%, 81%, 78%, 1);
+$color2: hsla(2%, 70%, 52%, 1);
+$color3: hsla(248%, 92%, 25%, 1);
+$color4: hsla(210%, 60%, 45%, 1);
+$color5: hsla(13%, 86%, 68%, 1);
+
+/* RGB */
+$color1: rgba(244, 166, 152, 1);
+$color2: rgba(218, 55, 49, 1);
+$color3: rgba(21, 5, 120, 1);
+$color4: rgba(46, 115, 183, 1);
+// $color5: rgba(244, 134, 104, 1);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+h5 {
+  font-weight: 700;
+}
+
+h4 {
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.mi-textbox {
+  .fl-callout-title {
+    padding: 10px 30px 0 30px;
+  }
+
+  .fl-callout-text-wrap {
+    padding: 10px 30px 20px 30px;
+  }
+}
