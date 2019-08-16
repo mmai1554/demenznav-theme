@@ -1,139 +1,177 @@
-#mapcontainer{
-  position:relative;
-  width:800px;
-  height:800px;
+#mapcontainer {
+  position: relative;
+  width: 800px;
+  height: 800px;
   background-image: url("/wp-content/themes/demenznav-theme/assets/bgmap_sprited.png");
   background-position: -1px 0px;
 }
-#shmap{
-  position:relative;
-  width:800px;
-  height:800px;
+
+#shmap {
+  position: relative;
+  width: 800px;
+  height: 800px;
   background-image: url("/wp-content/themes/demenznav-theme/assets/bgmap_sprited.png");
   background-position: -1px 0px;
-  img{
-    position:absolute;
-    z-index:1000;
+
+  img {
+    position: absolute;
+    z-index: 1000;
   }
+
   area, map {
-    outline:none;
+    outline: none;
   }
 }
+
 #legende {
-  div.legende{
-    font-size: 0.8em;
+  div.legende {
+    padding: 2px 3px;
+    border-radius: 4px;
+    background-color: #ffffff9e;
+    text-align: center;
+    font-size: 0.7em;
     display: inline-block;
     position: absolute;
     color: #423d3d;
+    min-width: 30px;
   }
-  div.highlight{
-    color:#333;
-    text-decoration:underline;
+  div.highlight {
+    background-color:#FFF;
+    text-decoration: underline;
   }
 }
-#legende_NF{
-  top:250px;
-  left:178px;
+
+#legende_NF {
+  top: 250px;
+  left: 178px;
 }
-#legende_FL{
-  top:140px;
-  left:305px;
+
+#legende_FL {
+  top: 140px;
+  left: 305px;
 }
-#legende_SLFL{
-  top:200px;
-  left:270px;
+
+#legende_SLFL {
+  top: 200px;
+  left: 270px;
 }
-#legende_DITH{
-  top:410px;
-  left:178px;
+
+#legende_DITH {
+  top: 410px;
+  left: 178px;
 }
-#legende_RDECK{
-  top:350px;
-  left:315px;
+
+#legende_RDECK {
+  top: 350px;
+  left: 315px;
 }
-#legende_KI{
-  top:350px;
-  left:470px;
+
+#legende_KI {
+  top: 350px;
+  left: 470px;
 }
-#legende_NMS{
-  top:440px;
-  left:435px;
+
+#legende_NMS {
+  top: 440px;
+  left: 435px;
 }
-#legende_PLOE{
-  top:380px;
-  left:520px;
+
+#legende_PLOE {
+  top: 380px;
+  left: 520px;
 }
-#legende_OH{
-  top:400px;
-  left:630px;
+
+#legende_OH {
+  top: 400px;
+  left: 630px;
 }
-#legende_STE{
-  top:510px;
-  left:288px;
+
+#legende_STE {
+  top: 510px;
+  left: 288px;
 }
-#legende_SE{
-  top:510px;
-  left:460px;
+
+#legende_SE {
+  top: 510px;
+  left: 460px;
 }
-#legende_HL{
-  top:540px;
-  left:610px;
+
+#legende_HL {
+  top: 540px;
+  left: 610px;
 }
-#legende_PI{
-  top:610px;
-  left:350px;
+
+#legende_PI {
+  top: 610px;
+  left: 350px;
 }
-#legende_STO{
-  top:590px;
-  left:495px;
+
+#legende_STO {
+  top: 590px;
+  left: 495px;
 }
-#legende_LAU{
-  top:680px;
-  left:540px;
+
+#legende_LAU {
+  top: 680px;
+  left: 540px;
 }
 
 #mapcontainer div.NF {
   background-position: -800px 0px;
 }
+
 #mapcontainer div.FL {
   background-position: -1598px 0px;
 }
+
 #mapcontainer div.SLFL {
   background-position: -2398px 0px;
 }
+
 #mapcontainer div.DITH {
   background-position: -3198px 0px;
 }
+
 #mapcontainer div.RDECK {
   background-position: -3997px 0px;
 }
+
 #mapcontainer div.KI {
   background-position: -4796px 0px;
 }
+
 #mapcontainer div.NMS {
   background-position: -5595.5px 0px;
 }
+
 #mapcontainer div.PLOE {
   background-position: -6395px 0px;
 }
+
 #mapcontainer div.OH {
   background-position: -7194px 0px;
 }
+
 #mapcontainer div.STE {
   background-position: -7993px 0px;
 }
+
 #mapcontainer div.SE {
   background-position: -8792px 0px;
 }
+
 #mapcontainer div.HL {
   background-position: -9591.5px 0px;
 }
+
 #mapcontainer div.PI {
   background-position: -10391px 0px;
 }
+
 #mapcontainer div.STO {
   background-position: -11190px 0px;
 }
+
 #mapcontainer div.LAU {
   background-position: -11989px 0px;
 }
