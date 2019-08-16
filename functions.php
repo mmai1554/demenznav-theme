@@ -25,16 +25,42 @@ function load_template_part( $template_name, $part_name = null ) {
 	get_template_part( $template_name, $part_name );
 	$var = ob_get_contents();
 	ob_end_clean();
+
 	return $var;
 }
 
-add_shortcode('kartesh', function () {
+add_shortcode( 'kartesh', function () {
 	// return file_get_contents( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-demenznav-sh-loader.php');
-	$file  = get_stylesheet_directory().'/includes/karte.php';
-	if (file_exists($file)) {
-		return file_get_contents($file);
+	$file = get_stylesheet_directory() . '/includes/karte.php';
+	if ( file_exists( $file ) ) {
+		ob_start();
+		require $file;
+		$var = ob_get_contents();
+		ob_end_clean();
+
+		return $var;
 	}
-});
+} );
+
+add_shortcode( 'input_klassifikationen', function () {
+	$taxonomies = get_terms( [
+		'taxonomy'   => 'klassifikation',
+		'hide_empty' => false,
+		'parent'     => 0
+	] );
+	$list       = [];
+	$template   = '<div class="form-check"><input class="form-check-input" type="checkbox" value="klassif[][%s]" id="K_%s"><label class="form-check-label" for="K_%s">%s</label></div>';
+	foreach ( $taxonomies as $tax ) {
+		$list[] = sprintf( $template,
+			$tax->term_id,
+			$tax->term_id,
+			$tax->term_id,
+			$tax->name
+		);
+	}
+
+	return implode( "\n", $list );
+} );
 
 
 add_shortcode( 'copyright', function ( $atts ) {
