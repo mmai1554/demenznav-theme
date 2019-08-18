@@ -5,6 +5,8 @@ $show_full   = apply_filters( 'fl_archive_show_full', FLTheme::get_setting( 'fl-
 $more_text   = FLTheme::get_setting( 'fl-archive-readmore-text' );
 $thumb_size  = FLTheme::get_setting( 'fl-archive-thumb-size', 'large' );
 
+$klassifikationen = $categories = get_the_terms( $post, 'klassifikation' );
+$kreise = $categories = get_the_terms( $post, 'kreis' );
 do_action( 'fl_before_post' ); ?>
 <div class="m-4">
     <h4><?php the_title(); ?></h4>

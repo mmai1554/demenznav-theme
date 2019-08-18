@@ -29,8 +29,17 @@ function load_template_part( $template_name, $part_name = null ) {
 	return $var;
 }
 
+add_shortcode( 'searchhome', function () {
+	return load_template_part('templates/searchhome');
+} );
+/**
+ * called “content-page.php” in that sub-folder, you would use get_template_part() like this:
+
+1
+<?php get_template_part( 'partials/content', 'page' ); ?>
+ */
+
 add_shortcode( 'kartesh', function () {
-	// return file_get_contents( plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-demenznav-sh-loader.php');
 	$file = get_stylesheet_directory() . '/includes/karte.php';
 	if ( file_exists( $file ) ) {
 		ob_start();
