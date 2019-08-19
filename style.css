@@ -165,6 +165,9 @@ body { font-family: 'Open Sans', sans-serif; }
 
 h1, h2, h3, h4, h5 { font-family: 'Open Sans', sans-serif; font-weight: 600; }
 
+a { color: #444444; text-decoration: underline; }
+a:hover { color: #da3731; }
+
 h5 { font-weight: 700; }
 
 h4 { letter-spacing: 1.1px; text-transform: uppercase; }
@@ -172,13 +175,18 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 .mi-textbox .fl-callout-title { padding: 10px 30px 0 30px; }
 .mi-textbox .fl-callout-text-wrap { padding: 10px 30px 20px 30px; }
 
-.searchhome .nav-tabs { border-bottom: none; }
-.searchhome .nav-link.active { border-top: 2px solid #da3731; }
-.searchhome .nav-link { background-color: rgba(210, 210, 210, 0.74); }
+.searchhome .nav-link.active { color: #495057; background-color: rgba(255, 255, 255, 0.9); border-color: #dee2e6 #dee2e6 #fff; border-top: 3px solid #da3731; border-top-right-radius: 0; }
+.searchhome .nav-link.active:hover { border-color: #da3731 #dee2e6 #fff; }
+.searchhome .nav-link { font-weight: 600; background-color: rgba(171, 170, 170, 0.74); border-color: rgba(171, 170, 170, 0.74); }
+.searchhome .nav-link:hover { color: initial; text-decoration: none; border-color: rgba(171, 170, 170, 0.74); }
 .searchhome .tab-content { min-height: 150px; background-color: rgba(255, 255, 255, 0.9); }
 .searchhome .input-group > .input-group-append > button { border-top-left-radius: 0; border-bottom-left-radius: 0; }
 .searchhome label { margin-top: 7px; }
 .searchhome input[type=text] { border: 0; height: inherit !important; font-size: inherit !important; font-weight: 600; border-bottom: 1px solid #2e73b7; }
+.searchhome #plz::-webkit-input-placeholder { color: #898989; }
+.searchhome #plz:-moz-placeholder { color: #898989; }
+.searchhome #plz::-moz-placeholder { color: #898989; }
+.searchhome #plz:-ms-input-placeholder { color: #898989; }
 .searchhome select { font-weight: 600; }
 .searchhome .select2-container .select2-selection--single .select2-selection__rendered { white-space: normal; }
 .searchhome .select2-container .select2-selection--single { height: auto; }
