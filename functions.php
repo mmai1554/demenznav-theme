@@ -39,7 +39,7 @@ add_shortcode( 'searchhome', function () {
 <?php get_template_part( 'partials/content', 'page' ); ?>
  */
 
-add_shortcode( 'kartesh', function () {
+add_shortcode( 'mi_karte', function () {
 	$file = get_stylesheet_directory() . '/includes/karte.php';
 	if ( file_exists( $file ) ) {
 		ob_start();

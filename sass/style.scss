@@ -6,11 +6,15 @@ Author: ReBoom GmbH
 Author URI: https://reboom.de
 Template: bb-theme
 */
-$color1: hsla(9%, 81%, 78%, 1);
-$color2: hsla(2%, 70%, 52%, 1);
-$color3: hsla(248%, 92%, 25%, 1);
-$color4: hsla(210%, 60%, 45%, 1);
-$color5: hsla(13%, 86%, 68%, 1);
+
+$color1: rgba(244, 166, 152, 1);
+$color2: rgba(218, 55, 49, 1);
+$color3: rgba(21, 5, 120, 1);
+$color4: rgba(46, 115, 183, 1);
+$color_mi_grau:#444444;
+
+$color_bg_searchmain_inactive:rgba(171, 170, 170, 0.74);
+$color_bg_searchmain_active:rgba(255, 255, 255, 0.9);
 
 
 @import "mi_mixins";
@@ -21,11 +25,6 @@ $color5: hsla(13%, 86%, 68%, 1);
 
 
 /* RGB */
-$color1: rgba(244, 166, 152, 1);
-$color2: rgba(218, 55, 49, 1);
-$color3: rgba(21, 5, 120, 1);
-$color4: rgba(46, 115, 183, 1);
-$color_mi_grau:#444444;
 // $color5: rgba(244, 134, 104, 1);
 
 body {
@@ -71,21 +70,27 @@ h4 {
     // border-bottom: none;
   }
 
+  .nav-link {
+    border-top:3px solid $color_bg_searchmain_inactive;
+    border-bottom:1px solid darken($color_bg_searchmain_inactive, 20);
+  }
+
   .nav-link.active {
     color: #495057;
     background-color: rgba(255, 255, 255, 0.9);
-    border-color: #dee2e6 #dee2e6 #fff;
-    border-top: 3px solid $color2;
-    border-top-right-radius: 0;
+    border-color: $color2 $color_bg_searchmain_active $color_bg_searchmain_active $color_bg_searchmain_active;
     &:hover {
-      border-color: $color2 #dee2e6 #fff;
+      border-color: $color2 $color_bg_searchmain_active $color_bg_searchmain_active $color_bg_searchmain_active;
     }
+  }
+
+  .nav-item {
+    //border-bottom:1px solid darken($color_suchfeld_tab, 20);
   }
 
   .nav-link {
     font-weight:600;
-    background-color: rgba(171, 170, 170, 0.74);
-    border-color:rgba(171, 170, 170, 0.74);
+    background-color: $color_bg_searchmain_inactive;
     &:hover {
       color:initial;
       text-decoration: none;
@@ -114,7 +119,7 @@ h4 {
   }
   #plz {
     @include placeholder {
-      color: lighten(#565656, 20%);
+      color: lighten($color_mi_grau, 20%);
     }
   }
   select {
