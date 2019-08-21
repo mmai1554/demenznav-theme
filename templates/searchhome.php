@@ -23,7 +23,7 @@ $landkreise = get_terms( [
             <a class="nav-link" id="volltext-tab" data-toggle="tab" href="#volltext" role="tab" aria-controls="volltext" aria-selected="false">Allgemeine Suche</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="kreis-tab" data-toggle="tab" href="#kreis" role="tab" aria-controls="kreis" aria-selected="false">Im Landkreis</a>
+            <a class="nav-link" id="kreis-tab" data-toggle="tab" href="#kreis" role="tab" aria-controls="kreis" aria-selected="false">Landkreis</a>
         </li>
     </ul>
     <div class="tab-content h-100 row rounded" id="myTabContent">
@@ -72,8 +72,8 @@ $landkreise = get_terms( [
         </div>
         <!--   Tab 3 -->
         <div class="tab-pane col align-self-center fade" id="kreis" role="tabpanel" aria-labelledby="kreis-tab">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row align-items-center">
+                <div class="col-md-8">
                     <select class="custom-select" id="Kreis">
                         <option value="">Kreis wählen</option>
 		                <?php foreach ( $landkreise as $kreis ): ?>
@@ -81,8 +81,8 @@ $landkreise = get_terms( [
 		                <? endforeach; ?>
                     </select>
                 </div>
-                <div class="col-md-12">
-
+                <div class="col-md-4 py-3">
+                    <img src="https://demenzwegweiser-sh.de/wp-content/uploads/2019/08/SH_blau.svg">
                 </div>
             </div>
         </div>
