@@ -11,17 +11,40 @@ $color1: rgba(244, 166, 152, 1);
 $color2: rgba(218, 55, 49, 1);
 $color3: rgba(21, 5, 120, 1);
 $color4: rgba(46, 115, 183, 1);
-$color_mi_grau:#444444;
+$color_mi_grau: #444444;
 
-$color_bg_searchmain_inactive:rgba(171, 170, 170, 0.74);
-$color_bg_searchmain_active:rgba(255, 255, 255, 0.9);
+$color_white: #FFFFFF;
+$color_schwatt: #222;
+
+$color_braun: #6e251f;
+$color_gruenblau: #48978b;
+$color_hellbraun: #ebc182;
+$color_magenta: #c53d66;
+$color_blau: #3f73b2;
+
+$card_1_bg: $color_braun;
+$card_1_fg: $color_white;
+
+$card_2_bg: $color_gruenblau;
+$card_2_fg: $color_schwatt;
+
+$card_3_bg: $color_hellbraun;
+$card_3_fg: $color_schwatt;
+
+$card_4_bg: $color_magenta;
+$card_4_fg: $color_white;
+
+$card_5_bg: $color_blau;
+$card_5_fg: $color_white;
+
+$color_bg_searchmain_inactive: rgba(208, 204, 204, 0.91);
+$color_bg_searchmain_active: rgba(255, 255, 255, 0.9);
 
 
 @import "mi_mixins";
 @import "accessibility";
 @import "kartesh";
 @import "select2bs4";
-
 
 
 /* RGB */
@@ -37,10 +60,11 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-  color:$color_mi_grau;
+  color: $color_mi_grau;
   text-decoration: underline;
+
   &:hover {
-    color:$color2;
+    color: $color2;
   }
 }
 
@@ -67,36 +91,28 @@ h4 {
 
 
   .nav-tabs {
-    // border-bottom: none;
-  }
-
-  .nav-link {
-    border-top:3px solid $color_bg_searchmain_inactive;
-    border-bottom:1px solid darken($color_bg_searchmain_inactive, 20);
-  }
-
-  .nav-link.active {
-    color: #495057;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: $color2 $color_bg_searchmain_active $color_bg_searchmain_active $color_bg_searchmain_active;
-    &:hover {
-      border-color: $color2 $color_bg_searchmain_active $color_bg_searchmain_active $color_bg_searchmain_active;
-    }
+    border-bottom: 1px solid transparent;
   }
 
   .nav-item {
-    //border-bottom:1px solid darken($color_suchfeld_tab, 20);
+
   }
 
   .nav-link {
-    font-weight:600;
+    border: 0;
+    //border-bottom:1px solid darken($color_bg_searchmain_inactive, 20);
+    font-weight: 600;
+    color: $color_mi_grau;
     background-color: $color_bg_searchmain_inactive;
-    &:hover {
-      color:initial;
-      text-decoration: none;
-      border-color:rgba(171, 170, 170, 0.74);
-    }
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
   }
+
+  .nav-link.active {
+    background-color: $color_bg_searchmain_active;
+    border-bottom-color: $color_bg_searchmain_active;
+    box-shadow: 0 6px 0 -3px $color2 inset;
+  }
+
 
   .tab-content {
     min-height: 150px;
@@ -107,28 +123,69 @@ h4 {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
+
   label {
-    margin-top:7px;
+    margin-top: 7px;
   }
+
   input[type=text] {
-    border:0;
+    border: 0;
     height: inherit !important;
     font-size: inherit !important;
     font-weight: 600;
-    border-bottom:1px solid $color4;
+    border-bottom: 1px solid $color4;
   }
+
   #plz {
     @include placeholder {
       color: lighten($color_mi_grau, 20%);
     }
   }
+
   select {
-    font-weight:600;
+    font-weight: 600;
   }
+
   .select2-container .select2-selection--single .select2-selection__rendered {
     white-space: normal;
   }
+
   .select2-container .select2-selection--single {
-    height:auto;
+    height: auto;
   }
 }
+
+@mixin carddesign($color_bg, $color_text) {
+  .fl-module-content {
+    background-color: $color_bg;
+  }
+  .fl-callout-text, .fl-callout-title, .fl-callout-cta-link {
+    color:$color_text !important;
+  }
+}
+
+.mi-card-row {
+
+  .fl-callout-content {
+    min-height: 395px;
+  }
+  .fl-col-group .fl-col:nth-child(1) .mi-textbox {
+    @include carddesign($card_2_bg, $card_1_fg);
+  }
+  .fl-col-group .fl-col:nth-child(2) .mi-textbox {
+    @include carddesign($card_5_bg, $card_5_fg);
+  }
+  .fl-col-group .fl-col:nth-child(3) .mi-textbox {
+    @include carddesign($card_3_bg, $card_3_fg);
+  }
+  &.mi-style2 {
+    .fl-col-group .fl-col:nth-child(1) .mi-textbox {
+      @include carddesign($color2, $card_1_fg);
+    }
+    .fl-col-group .fl-col:nth-child(2) .mi-textbox {
+      @include carddesign($card_1_bg, $card_1_fg);
+    }
+  }
+}
+
+
