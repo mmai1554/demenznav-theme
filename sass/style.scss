@@ -188,4 +188,31 @@ h4 {
   }
 }
 
+.arrowlink {
+  li {
+    list-style-type: none;
+  }
+  a {
+    padding:10px 5px 10px 20px;
+    display:block;
+    position:relative;
+  }
+  li a:before {
+    font-family: 'Ultimate-Icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    content: "\e9fa";
+    position: absolute;
+    left: 0;
+    top:14px;
+    display:inline-block;
+    color: $color4;
+  }
+}
+
 
