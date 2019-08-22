@@ -59,10 +59,9 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-a {
+a, .fl-icon-text a {
   color: $color_mi_grau;
   text-decoration: underline;
-
   &:hover {
     color: $color2;
   }
@@ -215,4 +214,31 @@ h4 {
   }
 }
 
+.mi-list-icons {
+  ul {
+    padding-inline-start: 0;
+    margin-top:20px;
+  }
+  li {
+    list-style-type: none;
+    margin-bottom:5px;
+  }
+  i {
+    // color:$color4;
+    font-size:18px;
+  }
+}
+
+.tax-klassifikation {
+  h2 {
+    margin-bottom:40px;
+  }
+  hr {
+    margin:30px 0;
+    border: 0;
+    height: 1px;
+    background: #e2e2e2;
+    // background-image: linear-gradient(to right, #ccc, #555, #ccc);
+  }
+}
 
