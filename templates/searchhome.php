@@ -51,9 +51,9 @@ $lk         = [
                 <div class="col-md-6 pr-1">
                     <select class="custom-select" id="Einrichtung">
                         <option value="">Hilfsangebot wählen</option>
-						<?php foreach ( $taxonomies as $tax ): ?>
-                            <option value="K<?= $tax->id ?>"><?= $tax->name ?></option>
-						<? endforeach; ?>
+						<?php foreach ( $taxonomies as $tax ) : ?>
+                            <option value="K<?= $tax->term_id ?>"><?= $tax->name ?></option>
+						<?php endforeach; ?>
                     </select>
                 </div>
                 <div class="col-md-6 pl-1">
