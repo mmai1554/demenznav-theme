@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							?>
 							<?php
 							// $post_format = get_post_format();
-							get_template_part( 'klassifikation', '' );
+							get_template_part( 'templates/klassifikation', '' );
 							?>
 						<?php endwhile; ?>
 
