@@ -47,7 +47,6 @@ $lk         = [
     <div class="tab-content h-100 row rounded" id="myTabContent">
         <!-- Tab 1 -->
         <div class="tab-pane col align-self-center fade show active" id="radius" role="tabpanel" aria-labelledby="radius-tab">
-<!--            <form class="mnc-ajaxform" action="--><?//= get_page_link( 721 ); // 721 = Umkreissuche  ?><!--" method="get">-->
             <form id="FormUmkreissuche" action="<?= get_page_link( 721 ); // 721 = Umkreissuche  ?>" method="get">
                 <div class="row">
                     <div class="col-md-6 pr-1">
