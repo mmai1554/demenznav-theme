@@ -47,10 +47,10 @@ $lk         = [
     <div class="tab-content h-100 row rounded" id="myTabContent">
         <!-- Tab 1 -->
         <div class="tab-pane col align-self-center fade show active" id="radius" role="tabpanel" aria-labelledby="radius-tab">
-            <form id="FormUmkreissuche" action="<?= get_page_link( 721 ); // 721 = Umkreissuche  ?>" method="get">
+            <form action="<?= get_page_link( 721 ); // 721 = Umkreissuche  ?>" method="get">
                 <div class="row">
                     <div class="col-md-6 pr-1">
-                        <select name="mnc[einrichtung]" class="custom-select" id="Einrichtung">
+                        <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
                             <option value="">Hilfsangebot wählen</option>
 							<?php foreach ( $taxonomies as $tax ) : ?>
                                 <option value="K<?= $tax->term_id ?>"><?= $tax->name ?></option>
@@ -60,7 +60,7 @@ $lk         = [
                     <div class="col-md-6 pl-1">
                         <div class="input-group mb-3">
                             <label for="plz" class="px-2">Wo:</label>
-                            <input name="mnc[plz]" type="text" class="form-control" id="plz" placeholder="Bitte Postleitzahl eingeben" aria-label="PLZ"
+                            <input name="mnc-plz" type="text" class="form-control" id="plz" placeholder="Bitte Postleitzahl eingeben" aria-label="PLZ"
                                    aria-describedby="plz">
                             <div class="input-group-append">
                                 <input type="submit" value="Suche starten">
