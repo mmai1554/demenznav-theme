@@ -94,7 +94,7 @@ $lk         = [
         <div class="tab-pane col align-self-center fade" id="kreis" role="tabpanel" aria-labelledby="kreis-tab">
             <div class="row align-items-center">
                 <div class="col-md-4 py-3">
-                    <img src="https://demenzwegweiser-sh.de/wp-content/uploads/2019/08/SH_blau.svg">
+                    <img src="<?= site_url().'/wp-content/uploads/2019/08/SH_blau.svg' ?>">
                 </div>
                 <div class="col-md-8 list-kreise">
                     <div class="row">
