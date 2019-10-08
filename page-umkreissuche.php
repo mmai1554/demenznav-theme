@@ -1,30 +1,79 @@
 <?php
 
-$errors     = [];
+use mnc\Umkreissuche;
+
+$errors = [];
 $has_errors = false;
 $query      = false;
 /** @var WP_Term $objKlass */
 $objKlass = null;
 
-if ( get_query_var( Demenznav_Sh_Public::QUERY_VAR_KLASSIFIKATION ) ) {
-	$klass_id = (int) str_replace( 'K', '', sanitize_text_field( get_query_var( Demenznav_Sh_Public::QUERY_VAR_KLASSIFIKATION ) ) );
+//function radius_query( $where, $lat, $lng, $radius ) {
+//	global $wpdb;
+//	// Specify the co-ordinates that will form
+//	// the centre of our search
+////	$lat = '54.3066';
+////	$lng = '9.6631';
+////	$radius = 50;
+//	$table = 'wp_latlong';
+//
+//	// Append our radius calculation to the WHERE
+//	$where .= " AND $wpdb->posts.ID IN (SELECT post_id FROM $table WHERE
+//         ( 6371 * acos( cos( radians(" . $lat . ") )
+//                        * cos( radians( lat ) )
+//                        * cos( radians( lng )
+//                        - radians(" . $lng . ") )
+//                        + sin( radians(" . $lat . ") )
+//                        * sin( radians( lat ) ) ) ) <= " . $radius . ")";
+//	// Return the updated WHERE part of the query
+//	return $where;
+//}
+
+if ( get_query_var( Umkreissuche::QUERY_VAR_KLASSIFIKATION ) ) {
+	$klass_id = (int) str_replace( 'K', '', sanitize_text_field( get_query_var( Umkreissuche::QUERY_VAR_KLASSIFIKATION ) ) );
 	$exists   = term_exists( $klass_id, 'klassifikation' );
 	if ( ! $exists ) {
-		$errors[ Demenznav_Sh_Public::QUERY_VAR_KLASSIFIKATION ] = 'Bitte wählen Sie eine Einrichtung aus.';
-		$has_errors                                              = true;
+		$errors[ Umkreissuche::QUERY_VAR_KLASSIFIKATION ] = 'Bitte wählen Sie eine Einrichtung aus.';
+		$has_errors                                       = true;
 	} else {
 		$objKlass = get_term( $klass_id, 'klassifikation' );
 	}
 }
-if ( get_query_var( Demenznav_Sh_Public::QUERY_VAR_PLZ ) ) {
-	$plz = sanitize_text_field( get_query_var( Demenznav_Sh_Public::QUERY_VAR_PLZ ) );
+if ( get_query_var( Umkreissuche::QUERY_VAR_PLZ ) ) {
+	$plz = sanitize_text_field( get_query_var( Umkreissuche::QUERY_VAR_PLZ ) );
 	$re  = '/^[0-9]{1,5}$/m';
 	if ( ! preg_match( $re, $plz ) ) {
-		$errors[ Demenznav_Sh_Public::QUERY_VAR_PLZ ] = 'Bitte eine korrekte Postleitzahlsuche eingeben, erlaubt sind vollständige oder Anfangsbereiche von Postleitzahlen. ';
-		$has_errors                                   = true;
+		$errors[ Umkreissuche::QUERY_VAR_PLZ ] = 'Bitte eine korrekte Postleitzahlsuche eingeben, erlaubt sind vollständige oder Anfangsbereiche von Postleitzahlen. ';
+		$has_errors                            = true;
 	}
 }
 
+global $wp_query;
+if ( strlen( $plz ) == 5 ) {
+	$arrmeta = [
+		'key'   => 'plz',
+		'value' => $plz
+	];
+} else {
+	$arrmeta = [
+		'key'   => 'plz',
+		'value' => $plz
+	];
+}
+$args = array(
+	'post_type'      => 'einrichtung',
+	'posts_per_page' => 10,
+	'tax_query'      => [
+		[
+			'taxonomy' => 'klassifikation',
+			'terms'    => $klass_id,
+		]
+	]
+);
+
+// Lat / lng der PLZ suchen:
+$objGeo = new \mnc\GeoData( $plz );
+$objGeo->init();
 
 ?>
 
@@ -42,35 +91,14 @@ if ( get_query_var( Demenznav_Sh_Public::QUERY_VAR_PLZ ) ) {
                     </div>
 					<?php get_template_part( 'templates/searchhome' ); ?>
 				<?php else: ?>
-                    <h2><?= $objKlass->name ?> in Region <?= $plz ?>:</h2>
-					<?php FLTheme::archive_page_header(); ?>
+                <?php
+					$objGeo->setRadius( 50 );
+                ?>
+                    <h2><?= $objKlass->name ?> in der Region <?= $plz ?> im Umkreis von 10 km:</h2>
 					<?php
-					global $wp_query;
-					if ( strlen( $plz ) == 5 ) {
-						$arrmeta = [
-							'key'   => 'plz',
-							'value' => $plz
-						];
-					} else {
-						$arrmeta = [
-							'key'   => 'plz',
-							'value' => $plz
-						];
-					}
-					$args     = array(
-						'post_type'      => 'einrichtung',
-						'posts_per_page' => 10,
-						'meta_query'     => [
-						        $arrmeta
-                        ],
-						'tax_query'      => [
-							[
-								'taxonomy' => 'klassifikation',
-								'terms'    => $klass_id,
-							]
-						]
-					);
+					add_filter( 'posts_where', [ $objGeo, 'filter_radius_query' ] );
 					$wp_query = new WP_Query( $args );
+					remove_filter( 'posts_where', [ $objGeo, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
