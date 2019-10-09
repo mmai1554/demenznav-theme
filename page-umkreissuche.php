@@ -2,8 +2,11 @@
 
 use mnc\Umkreissuche;
 use mnc\Maln;
+
 $UK = new Umkreissuche();
-$UK->validateInput();
+if ( $UK->isActionFired() ) {
+	$UK->validateInput();
+}
 
 ?>
 
@@ -12,6 +15,7 @@ $UK->validateInput();
     <div class="fl-archive <?php FLLayout::container_class(); ?>">
         <div class="row">
             <div class="fl-content">
+
 				<?php if ( $UK->hasErrors() ): ?>
                     <div class="card text-white bg-danger mb-3">
                         <div class="card-header">Anfragefehler</div>
@@ -20,20 +24,26 @@ $UK->validateInput();
 							<?php echo( Maln::ul( $UK->getErrors() ) ); ?>
                         </div>
                     </div>
-					<?php get_template_part( 'templates/searchhome' ); ?>
-				<?php else: ?>
+				<?php endif; ?>
+				<?php if ( $UK->showSearchform() ): ?>
+                    <div class="row mnc-wrapper-form-umkreissuche">
+                        <div class="col-12 mx-auto p-3 bg-light">
+                            <p>Bitte wählen Sie eine Einrichtung in Ihrem Postleitzahlenbereich aus:</p>
+							<?php get_template_part( 'templates/form_umkreissuche' ); ?>
+                        </div>
+                    </div>
+				<?php endif; ?>
+
+				<?php if ( $UK->isActionFired() ): ?>
                     <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
 					<?php
 					global $wp_query;
 					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					$wp_query = $UK->getWPQuery();
-					// remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
-							// $post_format = get_post_format();
 							get_template_part( 'templates/klassifikation', '' );
-							// get_template_part( 'content', 'page' );
 						endwhile;
 					endif;
 					?>
