@@ -1,8 +1,4 @@
 <?php
-$arrTabs    = [
-	'radius' => 'Einrichtungen vor Ort',
-	'kreis'  => 'Allgemeine Suche'
-];
 $taxonomies = get_terms( [
 	'taxonomy'   => 'klassifikation',
 	'hide_empty' => false,
