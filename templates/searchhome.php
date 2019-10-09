@@ -7,7 +7,7 @@ $taxonomies = get_terms( [
 
 ?>
 <div class="searchhome">
-    <ul class="nav nav-tabs justify-content-center flex-sm-column" id="myTab" role="tablist">
+    <ul class="nav nav-tabs justify-content-center flex-sm-row flex-column" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="radius-tab" data-toggle="tab" href="#radius" role="tab" aria-controls="radius" aria-selected="true">Einrichtungen vor Ort</a>
         </li>
