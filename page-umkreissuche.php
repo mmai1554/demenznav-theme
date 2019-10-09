@@ -2,7 +2,6 @@
 
 use mnc\Umkreissuche;
 use mnc\Maln;
-
 $UK = new Umkreissuche();
 $UK->validateInput();
 
@@ -25,9 +24,10 @@ $UK->validateInput();
 				<?php else: ?>
                     <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
 					<?php
+					global $wp_query;
 					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
-					$wp_query = new WP_Query( $args );
-					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
+					$wp_query = $UK->getWPQuery();
+					// remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
