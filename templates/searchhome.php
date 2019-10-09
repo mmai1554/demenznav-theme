@@ -47,19 +47,28 @@ $lk         = [
     <div class="tab-content h-100 row rounded" id="myTabContent">
         <!-- Tab 1 -->
         <div class="tab-pane col align-self-center fade show active" id="radius" role="tabpanel" aria-labelledby="radius-tab">
-            <form action="<?= get_page_link( 721 ); // 721 = Umkreissuche  ?>" method="get">
+            <form action="<?= get_page_link( 721 ); // 721 = Umkreissuche    ?>" method="get">
                 <div class="row">
-                    <div class="col-md-6 pr-1">
-                        <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
-                            <option value="">Hilfsangebot wählen</option>
-							<?php foreach ( $taxonomies as $tax ) : ?>
-                                <option value="K<?= $tax->term_id ?>"><?= $tax->name ?></option>
-							<?php endforeach; ?>
-                        </select>
+                    <div class="col-md-7 pr-1">
+                        <div class="input-group">
+                            <select name="mnc-einrichtung" class="custom-select" id="Einrichtung" style="width:65%;">
+                                <option value="">Hilfsangebot wählen</option>
+								<?php foreach ( $taxonomies as $tax ) : ?>
+                                    <option value="K<?= $tax->term_id ?>"><?= $tax->name ?></option>
+								<?php endforeach; ?>
+                            </select>
+                            <select name="mnc-rmax" class="custom-select" id="MncRmax">
+                                <option value="">Umkreis</option>
+                                <option value="10">10 km</option>
+                                <option value="25">25 km</option>
+                                <option value="50">50 km</option>
+                                <option value="100">100 km</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-6 pl-1">
+                    <div class="col-md-5 pl-1">
                         <div class="input-group mb-3">
-                            <label for="plz" class="px-2">Wo:</label>
+                            <label for="mnc-plz" class="px-2">von:</label>
                             <input name="mnc-plz" type="text" class="form-control" id="plz" placeholder="Bitte Postleitzahl eingeben" aria-label="PLZ"
                                    aria-describedby="plz">
                             <div class="input-group-append">
@@ -94,7 +103,7 @@ $lk         = [
         <div class="tab-pane col align-self-center fade" id="kreis" role="tabpanel" aria-labelledby="kreis-tab">
             <div class="row align-items-center">
                 <div class="col-md-4 py-3">
-                    <img src="<?= site_url().'/wp-content/uploads/2019/08/SH_blau.svg' ?>">
+                    <img src="<?= site_url() . '/wp-content/uploads/2019/08/SH_blau.svg' ?>">
                 </div>
                 <div class="col-md-8 list-kreise">
                     <div class="row">

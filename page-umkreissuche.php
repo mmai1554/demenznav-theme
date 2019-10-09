@@ -2,7 +2,9 @@
 
 use mnc\Umkreissuche;
 use mnc\Maln;
+
 $UK = new Umkreissuche();
+$UK->validateInput();
 
 ?>
 
@@ -11,24 +13,21 @@ $UK = new Umkreissuche();
     <div class="fl-archive <?php FLLayout::container_class(); ?>">
         <div class="row">
             <div class="fl-content">
-				<?php if ( $UK->hasErrors()): ?>
+				<?php if ( $UK->hasErrors() ): ?>
                     <div class="card text-white bg-danger mb-3">
                         <div class="card-header">Anfragefehler</div>
                         <div class="card-body">
                             <p class="card-text">Bei der Anfrage ist ein Fehler aufgetreten:</p>
-                            <?php echo(Maln::ul($UK->getErrors())); ?>
+							<?php echo( Maln::ul( $UK->getErrors() ) ); ?>
                         </div>
                     </div>
 					<?php get_template_part( 'templates/searchhome' ); ?>
 				<?php else: ?>
-                <?php
-					$UK->setRadius( 0, 50 );
-                ?>
-                    <h2><?= $objKlass->name ?> in der Region <?= $plz ?> im Umkreis von 10 km:</h2>
+                    <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
 					<?php
-					add_filter( 'posts_where', [ $objGeo, 'filter_radius_query' ] );
+					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					$wp_query = new WP_Query( $args );
-					remove_filter( 'posts_where', [ $objGeo, 'filter_radius_query' ] );
+					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
