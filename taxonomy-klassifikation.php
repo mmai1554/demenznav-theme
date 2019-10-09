@@ -15,17 +15,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<?php if ( have_posts() ) : ?>
 
-
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							?>
-							<?php
-							// $post_format = get_post_format();
-							get_template_part( 'templates/klassifikation', '' );
-							?>
-						<?php endwhile; ?>
-
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'templates/einrichtung', '' );
+						?>
+					<?php endwhile; ?>
 
 
 					<?php
@@ -33,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					echo '<div class="fl-archive-nav-prev">' . get_previous_posts_link( __( '&laquo; Zurück', 'fl-automator' ) ) . '</div>';
 					echo '<div class="fl-archive-nav-next">' . get_next_posts_link( __( 'Weiter &raquo;', 'fl-automator' ) ) . '</div>';
 					echo '</nav>';
-                    ?>
+					?>
 
 				<?php else : ?>
 

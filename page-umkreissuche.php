@@ -43,7 +43,7 @@ if ( $UK->isActionFired() ) {
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
-							get_template_part( 'templates/klassifikation', '' );
+							get_template_part( 'templates/einrichtung', '' );
 						endwhile;
 					endif;
 					?>
