@@ -17,10 +17,10 @@ if ( $UK->isActionFired() ) {
             <div class="fl-content">
 
 				<?php if ( $UK->hasErrors() ): ?>
-                    <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Anfragefehler</div>
+                    <div class="card mb-3">
+                        <div class="card-header text-white bg-info">Anfragefehler</div>
                         <div class="card-body">
-                            <p class="card-text">Bei der Anfrage ist ein Fehler aufgetreten:</p>
+                            <p class="card-text">Die Suche konnte nicht ausgeführt werden:</p>
 							<?php echo( Maln::ul( $UK->getErrors() ) ); ?>
                         </div>
                     </div>
@@ -38,8 +38,13 @@ if ( $UK->isActionFired() ) {
                     <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
 					<?php
 					global $wp_query;
+					add_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
+					add_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ], 10, 2 );
 					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					$wp_query = $UK->getWPQuery();
+					remove_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
+					remove_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ] );
+					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
