@@ -20,10 +20,10 @@ do_action( 'fl_before_post' ); ?>
     <div class="badges">
 		<?php foreach ( $kreise as $kreis ): ?>
             <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a>&nbsp;
+            <?php if ( isset( $UK ) ): ?>
+            &nbsp;<span class="badge badge-info"><?php echo( floor($UK->getDistanceOfEinrichtung( $post )) ); ?> km</span>
+            <?php endif; ?>
 		<?php endforeach; ?>
-		<?php if ( isset( $UK ) ): ?>
-            <p><span class="badge badge-warning"><?php echo( $UK->getDistanceOfEinrichtung( $post ) ); ?></span></p>
-		<?php endif; ?>
     </div>
 	<?php the_content(); ?>
     <div class="mi-list-icons">
