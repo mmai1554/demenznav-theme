@@ -45,15 +45,11 @@ do_action( 'fl_before_post' ); ?>
 			$content            = get_field( 'telefon' );
 			$contact['telefon'] = [ 'Telefon: ', $content, 'ua-icon-phone3' ];
 		}
-		if ( count( $contact ) == 0 ) {
-			return '';
-		}
-		$html = '<ul>';
+		$html = [];
 		foreach ( $contact as $key => $line ) {
-			$html .= Maln::icon_li( $line[0] . $line[1], $line[2] );
+			$html[] = Maln::icon_li( $line[0] . $line[1], $line[2] );
 		}
-		$html .= '</ul>';
-		echo( $html );
+		echo( Maln::ul($html) );
 
 		?>
     </div>
