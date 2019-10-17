@@ -34,17 +34,19 @@ if ( $UK->isActionFired() ) {
                     </div>
 				<?php endif; ?>
 
-				<?php if ( $UK->isActionFired() ): ?>
+				<?php if ( $UK->isActionFired() && !$UK->hasErrors() ): ?>
                     <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
 					<?php
-					global $wp_query;
-					add_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
-					add_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ], 10, 2 );
-					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
-					$wp_query = $UK->getWPQuery();
-					remove_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
-					remove_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ] );
-					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
+                global $wp_query;
+					// global $wp_query;
+//					add_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
+//					add_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ], 10, 2 );
+//					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
+					$UK->getWPQuery();
+					$a = $wp_query->request;
+//					remove_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
+//					remove_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ] );
+//					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
