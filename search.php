@@ -18,13 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php
 					while ( have_posts() ) :
 						the_post();
-						the_title();
+						?>
+                        <div class="search-entry">
+						<?php
 						the_excerpt();
 						global $post;
 						if ( $post->post_type == 'einrichtung' ) {
 							get_template_part( 'templates/einrichtung', '' );
 						}
-						?>
+						?></div>
 					<?php endwhile; ?>
 
 
