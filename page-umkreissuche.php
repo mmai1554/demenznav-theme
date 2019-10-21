@@ -34,10 +34,11 @@ if ( $UK->isActionFired() ) {
                     </div>
 				<?php endif; ?>
 
-				<?php if ( $UK->isActionFired() && !$UK->hasErrors() ): ?>
-                    <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?> im Umkreis von <?= $UK->getRadius() ?> km:</h3>
+				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
+                    <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?></h3>
+                    <p>Nach Entfernung sortiert:</p>
 					<?php
-                global $wp_query;
+					global $wp_query;
 					// global $wp_query;
 //					add_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
 //					add_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ], 10, 2 );
