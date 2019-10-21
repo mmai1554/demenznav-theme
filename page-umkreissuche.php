@@ -39,15 +39,8 @@ if ( $UK->isActionFired() ) {
                     <p>Nach Entfernung sortiert:</p>
 					<?php
 					global $wp_query;
-					// global $wp_query;
-//					add_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
-//					add_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ], 10, 2 );
-//					add_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					$UK->getWPQuery();
 					$a = $wp_query->request;
-//					remove_filter( 'posts_join', [ $UK, 'add_join_geocode' ] );
-//					remove_filter( 'posts_fields', [ $UK, 'add_fields_geocode' ] );
-//					remove_filter( 'posts_where', [ $UK, 'filter_radius_query' ] );
 					if ( have_posts() ) :
 						while ( have_posts() ) :
 							the_post();
