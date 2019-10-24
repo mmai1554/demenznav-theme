@@ -48,6 +48,12 @@ if ( $UK->isActionFired() ) {
 						endwhile;
 					endif;
 					?>
+					<?php
+					echo '<nav class="fl-archive-nav clearfix">';
+					echo '<div class="fl-archive-nav-prev">' . get_previous_posts_link( __( '&laquo; Zurück', 'fl-automator' ) ) . '</div>';
+					echo '<div class="fl-archive-nav-next">' . get_next_posts_link( __( 'Weiter &raquo;', 'fl-automator' ) ) . '</div>';
+					echo '</nav>';
+					?>
 				<?php endif; ?>
             </div>
         </div>
