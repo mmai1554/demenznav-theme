@@ -8,7 +8,7 @@ if ( ! isset( $taxonomies ) ) {
 }
 ?>
 <div class="searchhome">
-    <form action="<?= get_page_link( 721 ); // 721 = Umkreissuche         ?>" method="get">
+    <form action="/umkreissuche/" method="get">
         <div class="row">
             <div class="col-md-6 pr-1">
                 <div class="input-group">
