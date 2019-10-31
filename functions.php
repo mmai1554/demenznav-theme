@@ -19,6 +19,10 @@ function theme_enqueue_styles() {
 //	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo('wpurl') . '/DIR/TO/FAVICON/favicon.svg" />';
 //} );
 
+// wp_register_style( 'Leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css' );
+// wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css');
+// wp_enqueue_script( 'leafletjs', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js', [], null, true );
+
 
 function load_template_part( $template_name, $part_name = null ) {
 	ob_start();
@@ -29,48 +33,10 @@ function load_template_part( $template_name, $part_name = null ) {
 	return $var;
 }
 
+
 add_shortcode( 'searchhome', function () {
-	return load_template_part('templates/searchhome');
+	return load_template_part( 'templates/searchhome' );
 } );
-
-/**
- * called “content-page.php” in that sub-folder, you would use get_template_part() like this:
-
-1
-<?php get_template_part( 'partials/content', 'page' ); ?>
- */
-
-//add_shortcode( 'mi_karte', function () {
-//	$file = get_stylesheet_directory() . '/includes/karte.php';
-//	if ( file_exists( $file ) ) {
-//		ob_start();
-//		require $file;
-//		$var = ob_get_contents();
-//		ob_end_clean();
-//
-//		return $var;
-//	}
-//} );
-//
-//add_shortcode( 'input_klassifikationen', function () {
-//	$taxonomies = get_terms( [
-//		'taxonomy'   => 'klassifikation',
-//		'hide_empty' => false,
-//		'parent'     => 0
-//	] );
-//	$list       = [];
-//	$template   = '<div class="form-check"><input class="form-check-input" type="checkbox" value="klassif[][%s]" id="K_%s"><label class="form-check-label" for="K_%s">%s</label></div>';
-//	foreach ( $taxonomies as $tax ) {
-//		$list[] = sprintf( $template,
-//			$tax->term_id,
-//			$tax->term_id,
-//			$tax->term_id,
-//			$tax->name
-//		);
-//	}
-//
-//	return implode( "\n", $list );
-//} );
 
 
 add_shortcode( 'copyright', function ( $atts ) {
