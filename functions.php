@@ -13,16 +13,34 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 function theme_enqueue_styles() {
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	if ( ! is_admin() ) {
+		wp_enqueue_style( 'material', 'https://fonts.googleapis.com/icon?family=Material+Icons' );
+		wp_register_style( 'font_opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap', array(), null, 'all' );
+		wp_enqueue_style( 'font_opensans' );
+	}
 }
+
+
+
 
 //add_action( 'admin_head', function() {
 //	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo('wpurl') . '/DIR/TO/FAVICON/favicon.svg" />';
 //} );
 
-// wp_register_style( 'Leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css' );
-// wp_enqueue_style( 'leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css');
+//wp_register_style( 'opensans', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap' );
+//wp_register_style( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css' );
+//wp_enqueue_script( 'select2js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js', [], null, false );
+
+wp_register_style( 'Leaflet', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.css' );
+// wp_enqueue_style( 'leaflet' );
 // wp_enqueue_script( 'leafletjs', 'https://unpkg.com/leaflet@1.5.1/dist/leaflet.js', [], null, true );
 
+/*
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
+*/
 
 function load_template_part( $template_name, $part_name = null ) {
 	ob_start();
