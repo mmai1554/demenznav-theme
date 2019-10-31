@@ -62,6 +62,7 @@ h1, h2, h3, h4, h5 {
 a, .fl-icon-text a {
   color: $color_mi_grau;
   text-decoration: underline;
+
   &:hover {
     color: $color2;
   }
@@ -158,7 +159,7 @@ h4 {
     background-color: $color_bg;
   }
   .fl-callout-text, .fl-callout-title, .fl-callout-cta-link {
-    color:$color_text !important;
+    color: $color_text !important;
   }
 }
 
@@ -167,19 +168,24 @@ h4 {
   .fl-callout-content {
     min-height: 395px;
   }
+
   .fl-col-group .fl-col:nth-child(1) .mi-textbox {
     @include carddesign($card_2_bg, $card_1_fg);
   }
+
   .fl-col-group .fl-col:nth-child(2) .mi-textbox {
     @include carddesign($card_5_bg, $card_5_fg);
   }
+
   .fl-col-group .fl-col:nth-child(3) .mi-textbox {
     @include carddesign($card_3_bg, $card_3_fg);
   }
+
   &.mi-style2 {
     .fl-col-group .fl-col:nth-child(1) .mi-textbox {
       @include carddesign($color2, $card_1_fg);
     }
+
     .fl-col-group .fl-col:nth-child(2) .mi-textbox {
       @include carddesign($card_1_bg, $card_1_fg);
     }
@@ -190,11 +196,13 @@ h4 {
   li {
     list-style-type: none;
   }
+
   a {
-    padding:10px 5px 10px 20px;
-    display:block;
-    position:relative;
+    padding: 10px 5px 10px 20px;
+    display: block;
+    position: relative;
   }
+
   li a:before {
     font-family: 'Ultimate-Icons' !important;
     speak: none;
@@ -207,8 +215,8 @@ h4 {
     content: "\e9fa";
     position: absolute;
     left: 0;
-    top:14px;
-    display:inline-block;
+    top: 14px;
+    display: inline-block;
     color: $color4;
   }
 }
@@ -216,28 +224,88 @@ h4 {
 .mi-list-icons {
   ul {
     padding-inline-start: 0;
-    margin-top:20px;
+    margin-top: 20px;
   }
+
   li {
     list-style-type: none;
-    margin-bottom:5px;
+    margin-bottom: 5px;
   }
+
   i {
     // color:$color4;
-    font-size:18px;
+    font-size: 18px;
   }
 }
 
 .tax-klassifikation {
   h2 {
-    margin-bottom:40px;
+    margin-bottom: 40px;
   }
+
   hr {
-    margin:30px 0;
+    margin: 30px 0;
     border: 0;
     height: 1px;
     background: #e2e2e2;
     // background-image: linear-gradient(to right, #ccc, #555, #ccc);
   }
 }
+
+.badge {
+  padding: .3em .5em;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.badges {
+  margin-bottom: 20px;
+}
+
+.mnc-treffer {
+  margin: 50px 0 30px 0;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.list-einrichtungen {
+  hr {
+    margin: 30px 0;
+  }
+
+  .mnc-iconlist {
+    padding-top: 2px;
+  }
+  .fl-icon-text {
+    padding-left:10px;
+  }
+  .fl-icon {
+    vertical-align: top;
+  }
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 

@@ -28,15 +28,16 @@ if ( $UK->isActionFired() ) {
 				<?php if ( $UK->showSearchform() ): ?>
                     <div class="row mnc-wrapper-form-umkreissuche">
                         <div class="col-12 mx-auto p-3 bg-light">
-                            <p>Bitte wählen Sie eine Einrichtung in Ihrem Postleitzahlenbereich aus:</p>
-							<?php get_template_part( 'templates/form_umkreissuche' ); ?>
+							<?php get_template_part( 'templates/form_umkreissuche_unterseite' ); ?>
                         </div>
                     </div>
+                <div class="mnc-treffer">
+                    <h5>240 Ergebnisse</h5>
+                </div>
 				<?php endif; ?>
 
 				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
-                    <h3><?= $UK->getKlassifikation()->name ?> in der Region <?= $UK->getZipcode() ?></h3>
-                    <p>Nach Entfernung sortiert:</p>
+
 					<?php
 					global $wp_query;
 					$UK->getWPQuery();

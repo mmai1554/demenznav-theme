@@ -13,15 +13,13 @@ $klassifikationen = $categories = get_the_terms( $post, 'klassifikation' );
 $kreise           = $categories = get_the_terms( $post, 'kreis' );
 do_action( 'fl_before_post' ); ?>
 <div class="list-einrichtungen">
-    <h4><?php the_title(); ?></h4>
+    <h3><?php the_title(); ?></h3>
 	<?php if ( get_field( 'untertitel' ) ): ?>
         <p class="mb-2 text-muted"><?php the_field( 'untertitel' ); ?></p>
 	<?php endif; ?>
     <div class="badges">
 		<?php foreach ( $kreise as $kreis ): ?>
-            <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a>&nbsp;
-            <?php if ( isset( $UK ) ): ?>
-            &nbsp;<span class="badge badge-info"><?php echo( floor($UK->getDistanceOfEinrichtung( $post )) ); ?> km</span>
+            <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a><?php if ( isset( $UK ) ): ?><span class="badge badge-info"><?php echo( floor($UK->getDistanceOfEinrichtung( $post )) ); ?> km</span>
             <?php endif; ?>
 		<?php endforeach; ?>
     </div>
@@ -31,23 +29,24 @@ do_action( 'fl_before_post' ); ?>
 		$contact = [];
 		if ( $url = get_field( 'website', false, false ) ) {
 			$content            = sprintf( '<a href="%s" target="_blank" title="Website %s in neuem Fenster öffnen...">%s</a>', $url, $url, $url );
-			$contact['website'] = [ 'Web: ', $content, 'ua-icon-globe2' ];
+			// $contact['website'] = [ 'Web: ', $content, 'ua-icon-globe2' ];
+			$contact['website'] = [ 'Web: ', $content, 'language' ];
 		}
 		if ( $email = get_field( 'email', false, false ) ) {
 			$content          = sprintf( '<a href="%s" target="_blank" title="Mailprogramm öffnen und E-Mail an %s senden...">%s</a>', $email, $email, $email );
-			$contact['email'] = [ 'E-Mail: ', $content, 'ua-icon-icon-6-mail-envelope-closed2' ];
+			$contact['email'] = [ 'E-Mail: ', $content, 'email' ];
 		}
 		if ( get_field( 'strasse' ) ) {
 			$content            = get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' );
-			$contact['adresse'] = [ '', $content, 'ua-icon-location-pin' ];
+			$contact['adresse'] = [ '', $content, 'room' ];
 		}
 		if ( get_field( 'telefon' ) ) {
 			$content            = get_field( 'telefon' );
-			$contact['telefon'] = [ 'Telefon: ', $content, 'ua-icon-phone3' ];
+			$contact['telefon'] = [ 'Telefon: ', $content, 'phone_enabled' ];
 		}
 		$html = [];
 		foreach ( $contact as $key => $line ) {
-			$html[] = Maln::icon_li( $line[0] . $line[1], $line[2] );
+			$html[] = Maln::icon_li_material( $line[0] . $line[1], $line[2] );
 		}
 		echo( Maln::ul($html) );
 
