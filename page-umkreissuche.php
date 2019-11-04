@@ -14,7 +14,7 @@ if ( $UK->isActionFired() ) {
 
     <div class="fl-archive <?php FLLayout::container_class(); ?>">
         <div class="row">
-            <div class="fl-content">
+            <div class="fl-content mnc-results">
 
 				<?php if ( $UK->hasErrors() ): ?>
                     <div class="card mb-3">
@@ -35,6 +35,7 @@ if ( $UK->isActionFired() ) {
 
 				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
 					<?php
+					/** @var WP_Query $wp_query */
 					global $wp_query;
 					$UK->getWPQuery();
 					?>
@@ -49,12 +50,7 @@ if ( $UK->isActionFired() ) {
 							get_template_part( 'templates/einrichtung', '' );
 						endwhile;
 					endif;
-					?>
-					<?php
-					echo '<nav class="fl-archive-nav clearfix">';
-					echo '<div class="fl-archive-nav-prev">' . get_previous_posts_link( __( '&laquo; Zurück', 'fl-automator' ) ) . '</div>';
-					echo '<div class="fl-archive-nav-next">' . get_next_posts_link( __( 'Weiter &raquo;', 'fl-automator' ) ) . '</div>';
-					echo '</nav>';
+					get_template_part( 'templates/page_navigation', '' );
 					?>
 				<?php endif; ?>
                 <!--                Show Map-->
