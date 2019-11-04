@@ -31,16 +31,17 @@ if ( $UK->isActionFired() ) {
 							<?php get_template_part( 'templates/form_umkreissuche_unterseite' ); ?>
                         </div>
                     </div>
-                <div class="mnc-treffer">
-                    <h5>240 Ergebnisse</h5>
-                </div>
 				<?php endif; ?>
 
 				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
-
 					<?php
 					global $wp_query;
 					$UK->getWPQuery();
+					?>
+                    <div class="mnc-treffer">
+                        <h5><?= $wp_query->found_posts ?> Treffer</h5>
+                    </div>
+					<?php
 					$a = $wp_query->request;
 					if ( have_posts() ) :
 						while ( have_posts() ) :
@@ -56,8 +57,15 @@ if ( $UK->isActionFired() ) {
 					echo '</nav>';
 					?>
 				<?php endif; ?>
+                <!--                Show Map-->
             </div>
         </div>
     </div>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div id="gmapresults"></div>
+            </div>
+        </div>
+    </div>
 <?php get_footer(); ?>
