@@ -11,25 +11,42 @@ $thumb_size  = FLTheme::get_setting( 'fl-archive-thumb-size', 'large' );
 
 $klassifikationen = $categories = get_the_terms( $post, 'klassifikation' );
 $kreise           = $categories = get_the_terms( $post, 'kreis' );
+$url              = get_field( 'website', false, false );
+$email            = get_field( 'email', false, false );
+$adresse          = get_field( 'strasse' ) ? get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' ) : '';
+
+$geoloc = get_field( 'standort' );
+if ( isset( $geoloc['lat'] ) > 0 ) {
+	$lat  = $geoloc['lat'];
+	$lng  = $geoloc['lng'];
+	$data = sprintf( 'data-lat="%s" data-lng="%s"', $lat, $lng );
+} else {
+	$lat = false;
+	$lng = false;
+	$data = '';
+}
+
+
 do_action( 'fl_before_post' ); ?>
-<div class="list-einrichtungen">
+<div class="mnc-einrichtung" <?= $data ?>>
     <h3><?php the_title(); ?></h3>
 	<?php if ( get_field( 'untertitel' ) ): ?>
         <p class="mb-2 text-muted"><?php the_field( 'untertitel' ); ?></p>
 	<?php endif; ?>
     <div class="badges">
 		<?php foreach ( $kreise as $kreis ): ?>
-            <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a><?php if ( isset( $UK ) ): ?><span class="badge badge-info"><?php echo( floor($UK->getDistanceOfEinrichtung( $post )) ); ?> km</span>
-            <?php endif; ?>
+        <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a><?php if ( isset( $UK ) ): ?>
+                <span class="badge badge-info"><?php echo( floor( $UK->getDistanceOfEinrichtung( $post ) ) ); ?> km</span>
+			<?php endif; ?>
 		<?php endforeach; ?>
     </div>
 	<?php the_content(); ?>
     <div class="mi-list-icons">
 		<?php
 		$contact = [];
-		if ( $url = get_field( 'website', false, false ) ) {
-			$content            = sprintf( '<a href="%s" target="_blank" title="Website %s in neuem Fenster öffnen...">%s</a>', $url, $url, $url );
-			// $contact['website'] = [ 'Web: ', $content, 'ua-icon-globe2' ];
+		if ( $url ) {
+			// $content            = sprintf( '<a href="%s" target="_blank" title="Website %s in neuem Fenster öffnen...">%s</a>', $url, $url, $url );
+			$content            = Maln::alink( $url, $url, '_blank', 'Website in neuem Fenster öffnen' );
 			$contact['website'] = [ 'Web: ', $content, 'language' ];
 		}
 		if ( $email = get_field( 'email', false, false ) ) {
@@ -48,7 +65,7 @@ do_action( 'fl_before_post' ); ?>
 		foreach ( $contact as $key => $line ) {
 			$html[] = Maln::icon_li_material( $line[0] . $line[1], $line[2] );
 		}
-		echo( Maln::ul($html) );
+		echo( Maln::ul( $html ) );
 
 		?>
     </div>
