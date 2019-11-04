@@ -16,15 +16,19 @@ $email            = get_field( 'email', false, false );
 $adresse          = get_field( 'strasse' ) ? get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' ) : '';
 
 $geoloc = get_field( 'standort' );
-if ( isset( $geoloc['lat'] ) > 0 ) {
-	$lat  = $geoloc['lat'];
-	$lng  = $geoloc['lng'];
-	$data = sprintf( 'data-lat="%s" data-lng="%s"', $lat, $lng );
+if ( isset( $geoloc['lat'] ) ) {
+	$lat              = $geoloc['lat'];
+	$lng              = $geoloc['lng'];
+	$data             = sprintf( 'data-lat="%s" data-lng="%s"', $lat, $lng );
+	$url_routenplaner = 'https://www.google.com/maps?saddr=My+Location&daddr=' . $lat . ',' . $lng;
+
 } else {
-	$lat = false;
-	$lng = false;
-	$data = '';
+	$lat              = false;
+	$lng              = false;
+	$data             = '';
+	$url_routenplaner = false;
 }
+$entfernung = isset( $UK ) && false !== $lat ? floor( $UK->getDistanceOfEinrichtung( $post ) ) . '&nbsp;km' : '';
 
 
 do_action( 'fl_before_post' ); ?>
@@ -35,35 +39,41 @@ do_action( 'fl_before_post' ); ?>
 	<?php endif; ?>
     <div class="badges">
 		<?php foreach ( $kreise as $kreis ): ?>
-        <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a><?php if ( isset( $UK ) ): ?>
-                <span class="badge badge-info"><?php echo( floor( $UK->getDistanceOfEinrichtung( $post ) ) ); ?> km</span>
+            <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a>
+			<?php if ( $entfernung ): ?>
+                <span class="badge badge-info"><?= $entfernung ?></span>
 			<?php endif; ?>
 		<?php endforeach; ?>
     </div>
 	<?php the_content(); ?>
     <div class="mi-list-icons">
 		<?php
-		$contact = [];
+		$html = [];
 		if ( $url ) {
 			// $content            = sprintf( '<a href="%s" target="_blank" title="Website %s in neuem Fenster öffnen...">%s</a>', $url, $url, $url );
-			$content            = Maln::alink( $url, $url, '_blank', 'Website in neuem Fenster öffnen' );
-			$contact['website'] = [ 'Web: ', $content, 'language' ];
+			$content = Maln::alink( $url, $url, '_blank', 'Website in neuem Fenster öffnen' );
+			$html[]  = Maln::icon_li_material( 'Web: ' . $content, 'language' );
 		}
 		if ( $email = get_field( 'email', false, false ) ) {
-			$content          = sprintf( '<a href="%s" target="_blank" title="Mailprogramm öffnen und E-Mail an %s senden...">%s</a>', $email, $email, $email );
-			$contact['email'] = [ 'E-Mail: ', $content, 'email' ];
+			$content = sprintf( '<a href="%s" target="_blank" title="Mailprogramm öffnen und E-Mail an %s senden...">%s</a>', $email, $email, $email );
+			$html[]  = Maln::icon_li_material( 'E-Mail: ' . $content, 'email' );
 		}
 		if ( get_field( 'strasse' ) ) {
-			$content            = get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' );
-			$contact['adresse'] = [ '', $content, 'room' ];
+			$content = get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' );
+			$html[] = Maln::icon_li_material( $content, 'room' );
 		}
 		if ( get_field( 'telefon' ) ) {
-			$content            = get_field( 'telefon' );
-			$contact['telefon'] = [ 'Telefon: ', $content, 'phone_enabled' ];
+			$content = get_field( 'telefon' );
+			$html[]  = Maln::icon_li_material( 'Tel.: ' . $content, 'phone_enabled' );
 		}
-		$html = [];
-		foreach ( $contact as $key => $line ) {
-			$html[] = Maln::icon_li_material( $line[0] . $line[1], $line[2] );
+		if ( $url_routenplaner ) {
+			$content = Maln::alink(
+				$url_routenplaner,
+				'Routenplaner (Google Maps)',
+				'_blank',
+				'Routenplaner in neuem Fenster öffnen'
+			);
+			$html[]  = Maln::icon_li_material( $content, 'map' );
 		}
 		echo( Maln::ul( $html ) );
 
