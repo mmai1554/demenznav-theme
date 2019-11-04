@@ -38,7 +38,12 @@ if ( $UK->isActionFired() ) {
 					/** @var WP_Query $wp_query */
 					global $wp_query;
 					$UK->getWPQuery();
+					$my_lat = $UK->getGeoData()->getLat();
+					$my_lng = $UK->getGeoData()->getLong();
 					?>
+                    <div id="MyPosition" data-my-lat="<?= $my_lat ?>" data-my-lng="<?= $my_lng ?>">
+                        <h5>Ihre Position</h5>
+                    </div>
                     <div class="mnc-treffer">
                         <h5><?= $wp_query->found_posts ?> Treffer</h5>
                     </div>
