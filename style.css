@@ -219,9 +219,11 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 
 .mnc-treffer { margin: 50px 0 30px 0; border-bottom: 1px solid #d6d6d6; }
 
-.list-einrichtungen hr { margin: 30px 0; }
-.list-einrichtungen .mnc-iconlist { padding-top: 2px; }
-.list-einrichtungen .fl-icon-text { padding-left: 10px; }
-.list-einrichtungen .fl-icon { vertical-align: top; }
+.mnc-einrichtung hr { margin: 30px 0; }
+.mnc-einrichtung .mnc-iconlist { padding-top: 2px; }
+.mnc-einrichtung .fl-icon-text { padding-left: 10px; }
+.mnc-einrichtung .fl-icon { vertical-align: top; }
 
 .material-icons { font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 24px; /* Preferred icon size */ display: inline-block; line-height: 1; text-transform: none; letter-spacing: normal; word-wrap: normal; white-space: nowrap; direction: ltr; /* Support for all WebKit browsers. */ -webkit-font-smoothing: antialiased; /* Support for Safari and Chrome. */ text-rendering: optimizeLegibility; /* Support for Firefox. */ -moz-osx-font-smoothing: grayscale; /* Support for IE. */ font-feature-settings: 'liga'; }
+
+#gmapresults { border: 1px solid grey; height: 600px; }
