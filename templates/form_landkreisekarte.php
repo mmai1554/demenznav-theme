@@ -1,22 +1,22 @@
 <?php
 if ( ! isset( $lk ) ) {
 	$lk = [
-		'<a href="https://demenzwegweiser-sh.de/kreis/dithmarschen/">Dithmarschen</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/herzogtum-lauenburg/">Herzogtum Lauenburg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/nordfriesland/">Nordfriesland</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/ostholstein/">Ostholstein</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/pinneberg/">Pinneberg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/ploen/">Plön</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/rendsburg-eckernfoerde/">Rendsburg-Eckernförde</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/schleswig-flensburg/">Schleswig-Flensburg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/segeberg/">Segeberg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/steinburg/">Steinburg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/stormarn/">Stormarn</a>',
+		'<a href="/kreis/dithmarschen/">Dithmarschen</a>',
+		'<a href="/kreis/herzogtum-lauenburg/">Herzogtum Lauenburg</a>',
+		'<a href="/kreis/nordfriesland/">Nordfriesland</a>',
+		'<a href="/kreis/ostholstein/">Ostholstein</a>',
+		'<a href="/kreis/pinneberg/">Pinneberg</a>',
+		'<a href="/kreis/ploen/">Plön</a>',
+		'<a href="/kreis/rendsburg-eckernfoerde/">Rendsburg-Eckernförde</a>',
+		'<a href="/kreis/schleswig-flensburg/">Schleswig-Flensburg</a>',
+		'<a href="/kreis/segeberg/">Segeberg</a>',
+		'<a href="/kreis/steinburg/">Steinburg</a>',
+		'<a href="/kreis/stormarn/">Stormarn</a>',
 		// index Flensburg = 11
-		'<a href="https://demenzwegweiser-sh.de/kreis/flensburg/">Flensburg</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/kiel/">Kiel</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/luebeck/">Lübeck</a>',
-		'<a href="https://demenzwegweiser-sh.de/kreis/neumuenster/">Neumünster</a>',
+		'<a href="/kreis/flensburg/">Flensburg</a>',
+		'<a href="/kreis/kiel/">Kiel</a>',
+		'<a href="/kreis/luebeck/">Lübeck</a>',
+		'<a href="/kreis/neumuenster/">Neumünster</a>',
 	];
 }
 ?>
