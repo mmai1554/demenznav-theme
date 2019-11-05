@@ -8,16 +8,24 @@ $show_full   = apply_filters( 'fl_archive_show_full', FLTheme::get_setting( 'fl-
 $more_text   = FLTheme::get_setting( 'fl-archive-readmore-text' );
 $thumb_size  = FLTheme::get_setting( 'fl-archive-thumb-size', 'large' );
 
-$klassifikationen = $categories = get_the_terms( $post, 'klassifikation' );
-$kreise           = $categories = get_the_terms( $post, 'kreis' );
-$url              = get_field( 'website', false, false );
-$email            = get_field( 'email', false, false );
-$adresse          = get_field( 'strasse' ) ? get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' ) : '';
-$geoloc           = get_field( 'standort' );
+$arrMapTaxonomies = [
+	'kreis'          => 'klassifikation',
+	'klassifikation' => 'kreis'
+];
+if ( array_key_exists( $taxonomy, $arrMapTaxonomies ) ) {
+	$terms_for_badges = get_the_terms( $post, $arrMapTaxonomies[ $taxonomy ] );
+} else {
+	$terms_for_badges = [];
+}
+// $kreise  = $categories = get_the_terms( $post, 'kreis' );
+$url     = get_field( 'website', false, false );
+$email   = get_field( 'email', false, false );
+$adresse = get_field( 'strasse' ) ? get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' ) : '';
+$geoloc  = get_field( 'standort' );
 if ( isset( $geoloc['lat'] ) ) {
 	$legend[]         = $post;
-	$post->plzort = \mnc\Presenter::init()->plzort($post->ID);
-	$post->letter = \mnc\Presenter::init()->getLetterByIndex(count($legend)-1);
+	$post->plzort     = \mnc\Presenter::init()->plzort( $post->ID );
+	$post->letter     = \mnc\Presenter::init()->getLetterByIndex( count( $legend ) - 1 );
 	$lat              = $geoloc['lat'];
 	$lng              = $geoloc['lng'];
 	$data             = sprintf( 'data-lat="%s" data-lng="%s" data-label="%s"', $lat, $lng, $post->letter );
@@ -38,12 +46,12 @@ do_action( 'fl_before_post' ); ?>
         <p class="mb-2 text-muted"><?php the_field( 'untertitel' ); ?></p>
 	<?php endif; ?>
     <div class="badges">
-		<?php foreach ( $kreise as $kreis ): ?>
-            <a href="<?php echo( get_category_link( $kreis ) ); ?>"><span class="badge badge-secondary"><?php echo( $kreis->name ); ?></span></a>
-			<?php if ( $entfernung ): ?>
-                <span class="badge badge-info"><?= $entfernung ?></span>
-			<?php endif; ?>
+		<?php foreach ( $terms_for_badges as $badge_term ): ?>
+            <a href="<?php echo( get_category_link( $badge_term ) ); ?>"><span class="badge badge-secondary"><?php echo( $badge_term->name ); ?></span></a>
 		<?php endforeach; ?>
+		<?php if ( $entfernung ): ?>
+            <span class="badge badge-info"><?= $entfernung ?></span>
+		<?php endif; ?>
     </div>
 	<?php the_content(); ?>
     <div class="mi-list-icons">

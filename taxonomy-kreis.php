@@ -10,30 +10,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
             <div class="fl-content"<?php FLTheme::print_schema( ' itemscope="itemscope" itemtype="https://schema.org/Blog"' ); ?>>
 
-                <h2><?= single_term_title() ?></h2>
+                <h2>Kreis <?= single_term_title() ?></h2>
+                <p>Alle Einrichtungen des Kreises nach Alphabet sortiert</p>
 				<?php FLTheme::archive_page_header(); ?>
 
 				<?php if ( have_posts() ) : ?>
 
 
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
 						<?php
-						while ( have_posts() ) :
-							the_post();
-							?>
-							<?php
-							// $post_format = get_post_format();
-							get_template_part( 'templates/klassifikation', '' );
-							?>
-						<?php endwhile; ?>
-
+						// $post_format = get_post_format();
+						get_template_part( 'templates/einrichtung', '' );
+						?>
+					<?php endwhile; ?>
 
 
 					<?php
-					echo '<nav class="fl-archive-nav clearfix">';
-					echo '<div class="fl-archive-nav-prev">' . get_previous_posts_link( __( '&laquo; Zurück', 'fl-automator' ) ) . '</div>';
-					echo '<div class="fl-archive-nav-next">' . get_next_posts_link( __( 'Weiter &raquo;', 'fl-automator' ) ) . '</div>';
-					echo '</nav>';
-                    ?>
+					get_template_part( 'templates/page_navigation', '' );
+					?>
 
 				<?php else : ?>
 
