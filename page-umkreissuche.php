@@ -50,6 +50,7 @@ if ( $UK->isActionFired() ) {
 					<?php
 					$a = $wp_query->request;
 					if ( have_posts() ) :
+						$legend = [];
 						while ( have_posts() ) :
 							the_post();
 							get_template_part( 'templates/einrichtung', '' );
@@ -64,8 +65,22 @@ if ( $UK->isActionFired() ) {
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-9">
                 <div id="gmapresults"></div>
+            </div>
+            <div class="col-3">
+                <ul class="list-group list-group-flush">
+					<? /** @var WP_Post $a_post */
+					foreach ( $legend as $a_post ): ?>
+                        <div class="row mb-2">
+                            <div class="col-1"><?= $a_post->letter ?></div>
+                            <div class="col-11">
+								<?= $a_post->post_title ?><br>
+                                <small><?= $a_post->plzort ?></small>
+                            </div>
+                        </div>
+					<? endforeach; ?>
+                </ul>
             </div>
         </div>
     </div>

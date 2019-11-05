@@ -2,8 +2,7 @@
 
 use mnc\Maln;
 
-global $UK, $post; // Umkreissuche Object, only set when displaying results from Umkreissuche
-
+global $UK, $post, $legend; // Umkreissuche Object, only set when displaying results from Umkreissuche
 $show_thumbs = FLTheme::get_setting( 'fl-archive-show-thumbs' );
 $show_full   = apply_filters( 'fl_archive_show_full', FLTheme::get_setting( 'fl-archive-show-full' ) );
 $more_text   = FLTheme::get_setting( 'fl-archive-readmore-text' );
@@ -14,14 +13,15 @@ $kreise           = $categories = get_the_terms( $post, 'kreis' );
 $url              = get_field( 'website', false, false );
 $email            = get_field( 'email', false, false );
 $adresse          = get_field( 'strasse' ) ? get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' ) : '';
-
-$geoloc = get_field( 'standort' );
+$geoloc           = get_field( 'standort' );
 if ( isset( $geoloc['lat'] ) ) {
+	$legend[]         = $post;
+	$post->plzort = \mnc\Presenter::init()->plzort($post->ID);
+	$post->letter = \mnc\Presenter::init()->getLetterByIndex(count($legend)-1);
 	$lat              = $geoloc['lat'];
 	$lng              = $geoloc['lng'];
-	$data             = sprintf( 'data-lat="%s" data-lng="%s"', $lat, $lng );
+	$data             = sprintf( 'data-lat="%s" data-lng="%s" data-label="%s"', $lat, $lng, $post->letter );
 	$url_routenplaner = 'https://www.google.com/maps?saddr=My+Location&daddr=' . $lat . ',' . $lng;
-
 } else {
 	$lat              = false;
 	$lng              = false;
@@ -60,7 +60,7 @@ do_action( 'fl_before_post' ); ?>
 		}
 		if ( get_field( 'strasse' ) ) {
 			$content = get_field( 'strasse' ) . '<br>' . get_field( 'plz' ) . ' ' . get_field( 'ort' );
-			$html[] = Maln::icon_li_material( $content, 'room' );
+			$html[]  = Maln::icon_li_material( $content, 'room' );
 		}
 		if ( get_field( 'telefon' ) ) {
 			$content = get_field( 'telefon' );
