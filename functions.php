@@ -51,6 +51,12 @@ function load_template_part( $template_name, $part_name = null ) {
 	return $var;
 }
 
+function cstm_mime_types( $mimes ){
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_action( 'upload_mimes', 'cstm_mime_types' );
+
 
 add_shortcode( 'searchhome', function () {
 	return load_template_part( 'templates/searchhome' );
