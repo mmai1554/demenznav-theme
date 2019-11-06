@@ -3,6 +3,7 @@
 use mnc\Maln;
 
 global $UK, $post, $legend; // Umkreissuche Object, only set when displaying results from Umkreissuche
+
 $show_thumbs = FLTheme::get_setting( 'fl-archive-show-thumbs' );
 $show_full   = apply_filters( 'fl_archive_show_full', FLTheme::get_setting( 'fl-archive-show-full' ) );
 $more_text   = FLTheme::get_setting( 'fl-archive-readmore-text' );
@@ -36,7 +37,11 @@ if ( isset( $geoloc['lat'] ) ) {
 	$data             = '';
 	$url_routenplaner = false;
 }
-$entfernung = isset( $UK ) && false !== $lat ? floor( $UK->getDistanceOfEinrichtung( $post ) ) . '&nbsp;km' : '';
+if ( isset( $UK ) && $UK->hasDistance() ) {
+	$entfernung = floor( $UK->getDistanceOfEinrichtung( $post ) ) . '&nbsp;km';
+} else {
+	$entfernung = false;
+}
 
 
 do_action( 'fl_before_post' ); ?>

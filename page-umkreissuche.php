@@ -16,7 +16,19 @@ if ( $UK->isActionFired() ) {
             <div class="row no-gutters">
                 <div class="col-md-6">
                     <div class="mnc-trefferliste">
-					    <?php get_template_part( 'templates/page-umkreissuche-liste', '' ); ?>
+						<?php
+						if ( $UK->isActionFired() && ! $UK->hasErrors() ) {
+							$UK->getWPQuery();
+							get_template_part( 'templates/page-umkreissuche-liste', '' );
+						}
+						if($UK->isActionFired() && $UK->hasErrors()):
+						$errors = $UK->getErrors();
+						?>
+                        <div class="p-4 bg-danger text-white">
+                            <p>Ihre Anfrage konnte nicht verarbeitet werden. Folgende Fehler sind aufgetreten:</p>
+                            <?= Maln::ul($errors); ?>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="col-md-6">
