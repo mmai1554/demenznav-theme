@@ -1,20 +1,28 @@
 .mnc-mapsearch-container {
-
   position:relative;
 
-  .mnc-listcontainer {
+  .mnc-mapsearch-container-inner {
     min-height:100vh;
+    position: relative;
   }
+
   .mnc-mapcontainer {
     min-height:600px;
     width:100%;
   }
   .mnc-map-sticky {
     position:sticky;
+    top:122px;
   }
   .mnc-map-scroll {
     position:relative;
   }
+  .mnc-trefferliste {
+    padding:20px 40px 20px 20px;
+  }
 
+  #gmapresults {
+    height:100%;
+  }
 
 }

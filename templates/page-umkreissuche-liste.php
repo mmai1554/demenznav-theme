@@ -4,13 +4,13 @@ global $UK;
 global $wp_query;
 
 if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
+    <?php $UK->getWPQuery(); ?>
     <div class="mnc-treffer">
         <h5><?= $wp_query->found_posts ?> Treffer</h5>
     </div>
     <div class="fl-content mnc-results">
 		<?php
 		/** @var WP_Query $wp_query */
-		$UK->getWPQuery();
 		$my_lat = $UK->getGeoData()->getLat();
 		$my_lng = $UK->getGeoData()->getLong();
 		?>

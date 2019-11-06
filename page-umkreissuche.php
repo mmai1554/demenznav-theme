@@ -12,15 +12,17 @@ if ( $UK->isActionFired() ) {
 
 <?php get_header(); ?>
     <div class="mnc-mapsearch-container">
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="mnc-listcontainer" style="background-color: #DDD;">
-                    <?php  get_template_part( 'templates/page-umkreissuche-liste', '' ); ?>
+        <div class="mnc-mapsearch-container-inner">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="mnc-trefferliste">
+					    <?php get_template_part( 'templates/page-umkreissuche-liste', '' ); ?>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky" style="background-color:#ae8947;">
-                    <p>Irgendein Inhalt</p>
+                <div class="col-md-6">
+                    <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky">
+                        <div id="gmapresults"></div>
+                    </div>
                 </div>
             </div>
         </div>

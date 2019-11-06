@@ -175,10 +175,12 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection, form.was-va
 .searchhome .fl-button i { font-size: 1.3em; height: auto; margin-right: 8px; vertical-align: middle; width: auto; }
 
 .mnc-mapsearch-container { position: relative; }
-.mnc-mapsearch-container .mnc-listcontainer { min-height: 100vh; }
+.mnc-mapsearch-container .mnc-mapsearch-container-inner { min-height: 100vh; position: relative; }
 .mnc-mapsearch-container .mnc-mapcontainer { min-height: 600px; width: 100%; }
-.mnc-mapsearch-container .mnc-map-sticky { position: sticky; }
+.mnc-mapsearch-container .mnc-map-sticky { position: sticky; top: 122px; }
 .mnc-mapsearch-container .mnc-map-scroll { position: relative; }
+.mnc-mapsearch-container .mnc-trefferliste { padding: 20px 40px 20px 20px; }
+.mnc-mapsearch-container #gmapresults { height: 100%; }
 
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
@@ -230,8 +232,6 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 .mnc-einrichtung .fl-icon { vertical-align: top; }
 
 .material-icons { font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 24px; /* Preferred icon size */ display: inline-block; line-height: 1; text-transform: none; letter-spacing: normal; word-wrap: normal; white-space: nowrap; direction: ltr; /* Support for all WebKit browsers. */ -webkit-font-smoothing: antialiased; /* Support for Safari and Chrome. */ text-rendering: optimizeLegibility; /* Support for Firefox. */ -moz-osx-font-smoothing: grayscale; /* Support for IE. */ font-feature-settings: 'liga'; }
-
-#gmapresults { height: 600px; }
 
 .btn-primary { background: #4178a5; color: #FFF; border: 1px solid #305879; }
 
