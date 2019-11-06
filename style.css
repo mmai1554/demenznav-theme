@@ -172,6 +172,7 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection, form.was-va
 .searchhome select, .searchhome input { height: 50px; padding: 10px 20px; }
 .searchhome input[type=submit], .searchhome button { padding-top: 8px; height: 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; border: 1px solid #cb463b !important; }
 .searchhome input[type=submit]:hover, .searchhome button:hover { border: 1px solid #cc181f !important; }
+.searchhome .fl-button i { font-size: 1.3em; height: auto; margin-right: 8px; vertical-align: middle; width: auto; }
 
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
@@ -235,3 +236,5 @@ a.btn { text-decoration: none !important; color: #FFFFFF; }
 .custom-select { background-image: url("/wp-content/themes/demenznav-theme/assets/expand_more-24px.svg"); background-size: 24px; }
 
 .mnc-container-liste { padding: 0 30px 0 30px; }
+
+.mnc-bg-white { background-color: #FFFFFF; }

@@ -1,4 +1,10 @@
 <?php
+use mnc\Umkreissuche;
+
+global $UK;
+if($UK === null) {
+	$UK = new Umkreissuche();
+}
 if ( ! isset( $taxonomies ) ) {
 	$taxonomies = get_terms( [
 		'taxonomy'   => 'klassifikation',
@@ -7,8 +13,7 @@ if ( ! isset( $taxonomies ) ) {
 	] );
 }
 
-$seletced_plz = isset( $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] . '"' : '';
-
+$seletced_plz = isset( $_GET[ Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GET[ Umkreissuche::QUERY_VAR_PLZ ] . '"' : '';
 
 ?>
 <div class="searchhome">
@@ -19,7 +24,7 @@ $seletced_plz = isset( $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' .
                     <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
                         <option value="">Hilfsangebot wählen</option>
 						<?php foreach ( $taxonomies as $tax ) :
-							$selected = $_GET[ \mnc\Umkreissuche::QUERY_VAR_KLASSIFIKATION ] == 'K' . $tax->term_id ? ' selected' : '';
+							$selected = $_GET[ Umkreissuche::QUERY_VAR_KLASSIFIKATION ] == 'K' . $tax->term_id ? ' selected' : '';
 							?>
                             <option value="K<?= $tax->term_id ?>"<?= $selected ?>><?= $tax->name ?></option>
 						<?php endforeach; ?>

@@ -25,14 +25,6 @@ if ( $UK->isActionFired() ) {
                         </div>
                     </div>
 				<?php endif; ?>
-				<?php if ( $UK->showSearchform() ): ?>
-                    <div class="row mnc-wrapper-form-umkreissuche">
-                        <div class="col-12 mx-auto p-3 bg-light">
-							<?php get_template_part( 'templates/form_umkreissuche_unterseite' ); ?>
-                        </div>
-                    </div>
-				<?php endif; ?>
-
 				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
 					<?php
 					/** @var WP_Query $wp_query */
