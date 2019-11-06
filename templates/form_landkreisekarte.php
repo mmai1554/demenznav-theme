@@ -22,7 +22,7 @@ if ( ! isset( $lk ) ) {
 ?>
 
 <div class="col-md-4 py-3">
-    <img src="<?= site_url() . '/wp-content/uploads/2019/08/SH_blau.svg' ?>">
+	<?php echo do_shortcode('[landkreisesh]'); ?>
 </div>
 <div class="col-md-8 list-kreise">
     <div class="row">
