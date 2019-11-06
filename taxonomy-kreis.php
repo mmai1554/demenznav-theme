@@ -2,45 +2,38 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Silence is golden.
 }
+
+use mnc\Maln;
+use mnc\Umkreissuche;
+
+global $wp_query;
+$UK = new Umkreissuche();
+
 ?>
 <?php get_header(); ?>
 
-    <div class="fl-archive <?php FLLayout::container_class(); ?>">
-        <div class="">
-
-            <div class="fl-content"<?php FLTheme::print_schema( ' itemscope="itemscope" itemtype="https://schema.org/Blog"' ); ?>>
-
-                <h2>Kreis <?= single_term_title() ?></h2>
-                <p>Alle Einrichtungen des Kreises nach Alphabet sortiert</p>
-				<?php FLTheme::archive_page_header(); ?>
-
-				<?php if ( have_posts() ) : ?>
-
-
-					<?php
-					while ( have_posts() ) :
-						the_post();
-						?>
+    <div class="mnc-mapsearch-container">
+        <div class="mnc-mapsearch-container-inner">
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="mnc-trefferliste">
+                        <h2><?= single_term_title() ?></h2>
 						<?php
-						// $post_format = get_post_format();
-						get_template_part( 'templates/einrichtung', '' );
+						$UK->addLatLngToQuery( $wp_query );
 						?>
-					<?php endwhile; ?>
-
-
-					<?php
-					get_template_part( 'templates/page_navigation', '' );
-					?>
-
-				<?php else : ?>
-
-					<?php get_template_part( 'content', 'no-results' ); ?>
-
-				<?php endif; ?>
-
+						<?php get_template_part( 'templates/page-umkreissuche-liste', '' );
+						$UK->removeLatLngToQuery( $wp_query );
+						?>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky">
+                        <div id="gmapresults"></div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
+
 
 <?php get_footer(); ?>
