@@ -6,36 +6,36 @@ if ( ! isset( $taxonomies ) ) {
 		'parent'     => 0
 	] );
 }
+
+$seletced_plz = isset( $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] . '"' : '';
+
+
 ?>
 <div class="searchhome">
     <form action="/umkreissuche/" method="get">
         <div class="row">
-            <div class="col-md-6 pr-1">
-                <div class="input-group">
-                    <select name="mnc-einrichtung" class="custom-select" id="Einrichtung" style="width:65%;">
+            <div class="col-md-5 d-flex align-items-center">
+                <div class="ml-md-4">
+                    <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
                         <option value="">Hilfsangebot wählen</option>
-						<?php foreach ( $taxonomies as $tax ) : ?>
-							<?php
+						<?php foreach ( $taxonomies as $tax ) :
 							$selected = $_GET[ \mnc\Umkreissuche::QUERY_VAR_KLASSIFIKATION ] == 'K' . $tax->term_id ? ' selected' : '';
 							?>
-                            ?>
                             <option value="K<?= $tax->term_id ?>"<?= $selected ?>><?= $tax->name ?></option>
 						<?php endforeach; ?>
                     </select>
                 </div>
             </div>
-            <div class="col-md-6 pl-1">
-                <div class="input-group mb-3 d-flex align-items-center">
-                    <label for="mnc-plz" class="px-2">in der Nähe von:</label>
-					<?php
-					$seletced_plz = isset( $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GET[ \mnc\Umkreissuche::QUERY_VAR_PLZ ] . '"' : '';
-					?>
-                    <input name="mnc-plz" type="text" class="form-control" id="plz" placeholder="Bitte Postleitzahl eingeben" aria-label="PLZ"
+            <div class="col-md-5 d-flex align-items-center">
+                    <label for="mnc-plz" class="mr-md-4">in der Nähe von:</label>
+                    <input name="mnc-plz" type="text" class="form-control" id="plz" placeholder="Bitte PLZ eingeben" aria-label="PLZ"
                            aria-describedby="plz" <?= $seletced_plz ?>>
-                    <div class="input-group-append">
-                        <input type="submit" value="Suche starten">
-                    </div>
-                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-center">
+                <button type="submit" class="fl-button" role="button">
+                    <i class="material-icons" aria-hidden="true">search</i>
+                    <span class="fl-button-text">Suchen</span>
+                </button>
             </div>
         </div>
     </form>

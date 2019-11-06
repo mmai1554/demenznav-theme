@@ -14,6 +14,11 @@ $color3: rgba(21, 5, 120, 1);
 $color4: rgba(46, 115, 183, 1);
 $color_mi_grau: #444444;
 
+$color_akzent: #cb463b;
+$color_hover: #cc181f;
+
+
+
 $color_white: #FFFFFF;
 $color_schwatt: #222;
 
@@ -38,14 +43,14 @@ $card_4_fg: $color_white;
 $card_5_bg: $color_blau;
 $card_5_fg: $color_white;
 
-$color_bg_searchmain_inactive: rgba(208, 204, 204, 0.91);
-$color_bg_searchmain_active: rgba(255, 255, 255, 0.9);
+
 
 
 @import "mi_mixins";
 @import "accessibility";
 @import "kartesh";
 @import "select2bs4";
+@import "searchform";
 
 
 /* RGB */
@@ -85,73 +90,6 @@ h4 {
 
   .fl-callout-text-wrap {
     padding: 10px 30px 20px 30px;
-  }
-}
-
-.searchhome {
-
-  .nav-tabs {
-    border-bottom: 1px solid transparent;
-  }
-
-  .nav-item {
-
-  }
-
-  .nav-link {
-    border: 0;
-    //border-bottom:1px solid darken($color_bg_searchmain_inactive, 20);
-    font-weight: 600;
-    color: $color_mi_grau;
-    background-color: $color_bg_searchmain_inactive;
-    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
-  }
-
-  .nav-link.active {
-    background-color: $color_bg_searchmain_active;
-    border-bottom-color: $color_bg_searchmain_active;
-    box-shadow: 0 6px 0 -3px $color2 inset;
-  }
-
-
-  .tab-content {
-    min-height: 150px;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
-  .input-group > .input-group-append > button {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  label {
-    margin-top: 7px;
-  }
-
-  input[type=text] {
-    border: 0;
-    height: inherit !important;
-    font-size: inherit !important;
-    font-weight: 600;
-    border-bottom: 1px solid $color4;
-  }
-
-  #plz {
-    @include placeholder {
-      color: lighten($color_mi_grau, 20%);
-    }
-  }
-
-  select {
-    font-weight: 600;
-  }
-
-  .select2-container .select2-selection--single .select2-selection__rendered {
-    white-space: normal;
-  }
-
-  .select2-container .select2-selection--single {
-    height: auto;
   }
 }
 
@@ -245,7 +183,7 @@ h4 {
   }
 
   hr {
-    margin: 30px 0;
+    margin: 30px 0 25px 0;
     border: 0;
     height: 1px;
     background: #e2e2e2;
@@ -270,15 +208,17 @@ h4 {
 
 .mnc-einrichtung {
   hr {
-    margin: 30px 0;
+    margin: 30px 0 25px 0;
   }
 
   .mnc-iconlist {
     padding-top: 2px;
   }
+
   .fl-icon-text {
-    padding-left:10px;
+    padding-left: 10px;
   }
+
   .fl-icon {
     vertical-align: top;
   }
@@ -310,19 +250,19 @@ h4 {
 }
 
 #gmapresults {
-  border:1px solid grey;
-  height:600px;
+  // border: 1px solid grey;
+  height: 600px;
 }
 
 .btn-primary {
   background: #4178a5;
-  color:#FFF;
-  border:1px solid #305879;
+  color: #FFF;
+  border: 1px solid #305879;
 }
 
 a.btn {
   text-decoration: none !important;
-  color:#FFFFFF;
+  color: #FFFFFF;
 }
 
 #MyPosition {
@@ -330,4 +270,25 @@ a.btn {
   visibility: hidden;
 }
 
+.custom-select {
+  background-image: url("/wp-content/themes/demenznav-theme/assets/expand_more-24px.svg");
+  background-size: 24px;
+}
+
+//::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+//  color: $color_placeholder
+//}
+//::-moz-placeholder { /* Firefox 19+ */
+//  color: $color_placeholder;
+//}
+//:-ms-input-placeholder { /* IE 10+ */
+//  color: $color_placeholder;
+//}
+//:-moz-placeholder { /* Firefox 18- */
+//  color: $color_placeholder;
+//}
+
+.mnc-container-liste {
+  padding:0 30px 0 30px;
+}
 
