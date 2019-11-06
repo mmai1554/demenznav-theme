@@ -51,6 +51,7 @@ $card_5_fg: $color_white;
 @import "kartesh";
 @import "select2bs4";
 @import "searchform";
+@import "mapsearch";
 
 
 /* RGB */
@@ -202,7 +203,7 @@ h4 {
 }
 
 .mnc-treffer {
-  margin: 50px 0 30px 0;
+  margin: 0 0 30px 0;
   border-bottom: 1px solid #d6d6d6;
 }
 
@@ -249,10 +250,7 @@ h4 {
   font-feature-settings: 'liga';
 }
 
-#gmapresults {
-  // border: 1px solid grey;
-  height: 600px;
-}
+
 
 .btn-primary {
   background: #4178a5;
@@ -290,5 +288,9 @@ a.btn {
 
 .mnc-container-liste {
   padding:0 30px 0 30px;
+}
+
+.mnc-bg-white {
+  background-color: #FFFFFF;
 }
 
