@@ -1,14 +1,15 @@
 <?php
 
-use mnc\Maln;
 global $UK;
+global $wp_query;
 
-?>
-<div class="fl-content mnc-results">
-	<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
+if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
+    <div class="mnc-treffer">
+        <h5><?= $wp_query->found_posts ?> Treffer</h5>
+    </div>
+    <div class="fl-content mnc-results">
 		<?php
 		/** @var WP_Query $wp_query */
-		global $wp_query;
 		$UK->getWPQuery();
 		$my_lat = $UK->getGeoData()->getLat();
 		$my_lng = $UK->getGeoData()->getLong();
@@ -17,7 +18,6 @@ global $UK;
             <h5>Ihre Position</h5>
         </div>
 		<?php
-		$a = $wp_query->request;
 		if ( have_posts() ) :
 			$legend = [];
 			while ( have_posts() ) :
@@ -25,8 +25,9 @@ global $UK;
 				get_template_part( 'templates/einrichtung', '' );
 			endwhile;
 		endif;
-		get_template_part( 'templates/page_navigation', '' );
 		?>
-	<?php endif; ?>
-    <!--                Show Map-->
-</div>
+        <div id="PageNavigator">
+			<?php get_template_part( 'templates/page_navigation', '' ); ?>
+        </div>
+    </div>
+<?php endif; ?>

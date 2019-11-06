@@ -174,6 +174,12 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection, form.was-va
 .searchhome input[type=submit]:hover, .searchhome button:hover { border: 1px solid #cc181f !important; }
 .searchhome .fl-button i { font-size: 1.3em; height: auto; margin-right: 8px; vertical-align: middle; width: auto; }
 
+.mnc-mapsearch-container { position: relative; }
+.mnc-mapsearch-container .mnc-listcontainer { min-height: 100vh; }
+.mnc-mapsearch-container .mnc-mapcontainer { min-height: 600px; width: 100%; }
+.mnc-mapsearch-container .mnc-map-sticky { position: sticky; }
+.mnc-mapsearch-container .mnc-map-scroll { position: relative; }
+
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
 
@@ -216,7 +222,7 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 
 .badges { margin-bottom: 20px; }
 
-.mnc-treffer { margin: 50px 0 30px 0; border-bottom: 1px solid #d6d6d6; }
+.mnc-treffer { margin: 0 0 30px 0; border-bottom: 1px solid #d6d6d6; }
 
 .mnc-einrichtung hr { margin: 30px 0 25px 0; }
 .mnc-einrichtung .mnc-iconlist { padding-top: 2px; }

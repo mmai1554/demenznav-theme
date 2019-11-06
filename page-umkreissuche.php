@@ -11,68 +11,17 @@ if ( $UK->isActionFired() ) {
 ?>
 
 <?php get_header(); ?>
-
-    <div class="fl-archive <?php FLLayout::container_class(); ?>">
-        <div class="row">
-            <div class="fl-content mnc-results">
-
-				<?php if ( $UK->hasErrors() ): ?>
-                    <div class="card mb-3">
-                        <div class="card-header text-white bg-info">Anfragefehler</div>
-                        <div class="card-body">
-                            <p class="card-text">Die Suche konnte nicht ausgeführt werden:</p>
-							<?php echo( Maln::ul( $UK->getErrors() ) ); ?>
-                        </div>
-                    </div>
-				<?php endif; ?>
-				<?php if ( $UK->isActionFired() && ! $UK->hasErrors() ): ?>
-					<?php
-					/** @var WP_Query $wp_query */
-					global $wp_query;
-					$UK->getWPQuery();
-					$my_lat = $UK->getGeoData()->getLat();
-					$my_lng = $UK->getGeoData()->getLong();
-					?>
-                    <div id="MyPosition" data-my-lat="<?= $my_lat ?>" data-my-lng="<?= $my_lng ?>">
-                        <h5>Ihre Position</h5>
-                    </div>
-                    <div class="mnc-treffer">
-                        <h5><?= $wp_query->found_posts ?> Treffer</h5>
-                    </div>
-					<?php
-					$a = $wp_query->request;
-					if ( have_posts() ) :
-						$legend = [];
-						while ( have_posts() ) :
-							the_post();
-							get_template_part( 'templates/einrichtung', '' );
-						endwhile;
-					endif;
-					get_template_part( 'templates/page_navigation', '' );
-					?>
-				<?php endif; ?>
-                <!--                Show Map-->
+    <div class="mnc-mapsearch-container">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <div class="mnc-listcontainer" style="background-color: #DDD;">
+                    <?php  get_template_part( 'templates/page-umkreissuche-liste', '' ); ?>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-9">
-                <div id="gmapresults"></div>
-            </div>
-            <div class="col-3">
-                <ul class="list-group list-group-flush">
-					<? /** @var WP_Post $a_post */
-					foreach ( $legend as $a_post ): ?>
-                        <div class="row mb-2">
-                            <div class="col-1"><?= $a_post->letter ?></div>
-                            <div class="col-11">
-								<?= $a_post->post_title ?><br>
-                                <small><?= $a_post->plzort ?></small>
-                            </div>
-                        </div>
-					<? endforeach; ?>
-                </ul>
+            <div class="col-md-6">
+                <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky" style="background-color:#ae8947;">
+                    <p>Irgendein Inhalt</p>
+                </div>
             </div>
         </div>
     </div>
