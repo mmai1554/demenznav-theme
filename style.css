@@ -244,3 +244,9 @@ a.btn { text-decoration: none !important; color: #FFFFFF; }
 .mnc-container-liste { padding: 0 30px 0 30px; }
 
 .mnc-bg-white { background-color: #FFFFFF; }
+
+.mi-textbox .fl-module-content { min-height: 430px; }
+
+.mnc-datatable th { white-space: nowrap; }
+.mnc-datatable tr:nth-child(odd) { background: #EEE; }
+.mnc-datatable tr:nth-child(even) { background: #FFF; }
