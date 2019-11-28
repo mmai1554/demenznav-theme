@@ -182,6 +182,24 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection, form.was-va
 .mnc-mapsearch-container .mnc-trefferliste { padding: 20px 40px 20px 20px; }
 .mnc-mapsearch-container #gmapresults { height: 100%; }
 
+.mnc-datatable tr:nth-child(odd) { background: #EEE; }
+.mnc-datatable tr:nth-child(even) { background: #FFF; }
+.mnc-datatable th { white-space: nowrap; padding: 10px 20px; border: 0 solid grey; }
+.mnc-datatable td { border: 0 solid grey; padding: 10px 20px; text-align: right; }
+.mnc-datatable tr:nth-child(odd) { background: #eeeeee; }
+.mnc-datatable td:nth-child(1) { text-align: left; }
+
+.mnc-infoseite h3 { margin-top: 3.2rem; margin-bottom: 1.6rem; }
+.mnc-infoseite h3:first-child { margin-top: 1rem; }
+.mnc-infoseite p { margin-bottom: 1.6rem; }
+.mnc-infoseite strong, .mnc-infoseite b { font-weight: normal !important; font-style: italic; }
+.mnc-infoseite a { transition-property: border-bottom-color, color; -webkit-transition-duration: 0.2s; -o-transition-duration: 0.2s; transition-duration: 0.2s; border-bottom: 1px solid rgba(37, 37, 37, 0.5); }
+.mnc-infoseite .mnc-li-space li { margin-bottom: 1.6rem; }
+.mnc-infoseite .mnc-li-space ul, .mnc-infoseite .mnc-li-space ol { padding: 0; }
+.mnc-infoseite .mnc-subtitle { font-size: 24px; line-height: 1.5; }
+
+[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"])::after { content: '(external link)'; display: inline-block; width: .7em; height: .7em; text-indent: .7em; white-space: nowrap; overflow: hidden; background-image: url("/wp-content/themes/demenznav-theme/assets/open_in_new-24px.svg"); background-repeat: no-repeat; background-position: center; background-size: 100%; margin-left: .1em; }
+
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
 
@@ -247,6 +265,4 @@ a.btn { text-decoration: none !important; color: #FFFFFF; }
 
 .mi-textbox .fl-module-content { min-height: 430px; }
 
-.mnc-datatable th { white-space: nowrap; }
-.mnc-datatable tr:nth-child(odd) { background: #EEE; }
-.mnc-datatable tr:nth-child(even) { background: #FFF; }
+.sub-menu a:hover { text-decoration: none; }

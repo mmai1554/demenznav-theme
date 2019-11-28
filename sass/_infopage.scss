@@ -1,0 +1,80 @@
+.mnc-datatable {
+  tr:nth-child(odd) {
+    background: #EEE;
+  }
+
+  tr:nth-child(even) {
+    background: #FFF;
+  }
+  th {
+    white-space:nowrap;
+    padding:10px 20px;
+    border:0 solid grey;
+  }
+  td {
+    border:0 solid grey;
+    padding:10px 20px;
+    text-align:right;
+  }
+  tr:nth-child(odd){
+    background:#eeeeee;
+  }
+  td:nth-child(1) {
+    text-align:left;
+  }
+}
+
+
+
+.mnc-infoseite {
+  h3 {
+    margin-top:3.2rem;
+    margin-bottom:1.6rem;
+    &:first-child {
+      margin-top:1rem;
+    }
+  }
+  p {
+    margin-bottom:1.6rem;
+  }
+  strong, b {
+    font-weight:normal !important;
+    font-style:italic;
+  }
+  a {
+    transition-property: border-bottom-color, color;
+    -webkit-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    border-bottom: 1px solid rgba(37,37,37,0.5);
+  }
+  .mnc-li-space {
+    li {
+      margin-bottom:1.6rem;
+    }
+    ul, ol {
+      padding:0;
+    }
+  }
+  .mnc-subtitle {
+    font-size:24px;
+    line-height:1.5;
+
+  }
+}
+
+[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"])::after {
+  content: '(external link)';
+  display: inline-block;
+  width: .7em;
+  height: .7em;
+  text-indent: .7em;
+  white-space: nowrap;
+  overflow: hidden;
+  background-image: url('/wp-content/themes/demenznav-theme/assets/open_in_new-24px.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  margin-left: .1em;
+}
+
