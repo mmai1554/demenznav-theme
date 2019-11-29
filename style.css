@@ -200,7 +200,8 @@ select.is-valid ~ .select2-container--bootstrap4 .select2-selection, form.was-va
 .mnc-infoseite a:after { border-bottom: 1px solid #FFF; }
 .mnc-infoseite .mnc-subtitle { font-size: 24px; line-height: 1.5; }
 
-[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]):after { content: '[externer link]'; display: inline-block; width: .8em; height: .8em; text-indent: .8em; white-space: nowrap; overflow: hidden; background-image: url("/wp-content/themes/demenznav-theme/assets/open_in_new-24px.svg"); background-repeat: no-repeat; background-position: center; background-size: 100%; margin-left: .1em; border-bottom: 0; }
+[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]):after { display: inline-block; padding-left: 0.4em; font-size: 18px; font-family: 'Material Icons'; content: "launch"; -webkit-font-feature-settings: 'liga'; color: #858585; }
+[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]):hover:after { color: #db3832; }
 
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
