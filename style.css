@@ -208,7 +208,7 @@ body { font-family: 'Open Sans', sans-serif; }
 
 h1, h2, h3, h4, h5 { font-family: 'Open Sans', sans-serif; font-weight: 600; }
 
-a, .fl-icon-text a { color: #444444; text-decoration: underline; }
+a, .fl-icon-text a { color: #444444; }
 a:hover, .fl-icon-text a:hover { color: #db3832; }
 
 h5 { font-weight: 700; }

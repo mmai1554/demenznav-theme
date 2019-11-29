@@ -67,8 +67,7 @@ h1, h2, h3, h4, h5 {
 
 a, .fl-icon-text a {
   color: $color_mi_grau;
-  text-decoration: underline;
-
+  // text-decoration: underline
   &:hover {
     color: $color2;
   }
