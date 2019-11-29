@@ -10,6 +10,7 @@ Template: bb-theme
 $color1: rgba(244, 166, 152, 1);
 $color2: rgb(140, 36, 36);
 $color2: #db3832;
+$color_mnc_rot:$color2;
 $color3: rgba(21, 5, 120, 1);
 $color4: rgba(46, 115, 183, 1);
 $color_mi_grau: #444444;
@@ -49,7 +50,7 @@ $card_5_fg: $color_white;
 @import "select2bs4";
 @import "searchform";
 @import "mapsearch";
-@import "infopage";
+@import "mnc_infoseite";
 
 
 /* RGB */
