@@ -87,7 +87,8 @@
 
 [href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]) {
   &:after {
-    display:inline-block;
+    // inline-block solves underscore problem but does not work in Safari, mmai
+    // display:inline-block;
     padding-left:0.4em;
     font-size:18px;
     font-family: 'Material Icons';
