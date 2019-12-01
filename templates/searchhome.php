@@ -8,7 +8,7 @@ $user_logged_in = is_user_logged_in();
 // $user_logged_in = false;
 
 ?>
-<div class="searchhome mnc-infoseite">
+<div class="searchhome">
     <?php if(true): ?>
     <ul class="nav nav-tabs justify-content-center flex-sm-row flex-column" id="myTab" role="tablist">
         <li class="nav-item">

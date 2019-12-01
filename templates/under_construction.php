@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mnc-infoseite">
     <div class="col-md-12">
         <div class="p-4">
             <p>Die Suche auf dieser Website wird ab dem 01.03.2020 nutzbar sein. Bis dahin stehen Ihnen aber die folgenden Seiten zur Suche von Hilfsangeboten zur
