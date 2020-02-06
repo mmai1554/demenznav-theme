@@ -2,7 +2,7 @@
  * Created by mmai on the birthday of the flying spagetthi monster
  */
 jQuery(document).ready(function ($) {
-    $("a:not(:has(img,div))").filter(function () {
+    $("a:not(:has(img,div,h1,h2,h3,h4))").filter(function () {
         return this.hostname && this.hostname !== location.hostname;
     }).attr('target', '_blank').addClass('mnc-ext-link').each(function(index) {
         let me = $(this);
