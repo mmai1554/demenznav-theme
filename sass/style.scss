@@ -254,24 +254,24 @@ a.btn {
   }
 }
 
-.mnc-ext {
-  [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]) {
+
+.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]), .mnc-ext-link {
     &:after {
       // inline-block solves underscore problem but does not work in Safari, mmai
       // display:inline-block;
       padding-left:0.4em;
-      font-size:18px;
+      font-size:inherit;
       font-family: 'Material Icons';
       content: "launch";
       -webkit-font-feature-settings: 'liga';
       color: #858585;
+      border-bottom: 1px solid #FFFFFF;
     }
     &:hover:after {
       color: $color_mnc_rot;
     }
   }
 
-}
 
 
 
