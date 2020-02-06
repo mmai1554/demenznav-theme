@@ -41,13 +41,6 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .mnc-datatable tr:nth-child(odd) { background: #eeeeee; }
 .mnc-datatable td:nth-child(1) { text-align: left; }
 
-.mnc-datatable tr:nth-child(odd) { background: #EEE; }
-.mnc-datatable tr:nth-child(even) { background: #FFF; }
-.mnc-datatable th { white-space: nowrap; padding: 10px 20px; border: 0 solid grey; }
-.mnc-datatable td { border: 0 solid grey; padding: 10px 20px; text-align: right; }
-.mnc-datatable tr:nth-child(odd) { background: #eeeeee; }
-.mnc-datatable td:nth-child(1) { text-align: left; }
-
 .mnc-infoseite .fl-module-rich-text .fl-module-content, .mnc-infoseite .fl-module-photo .fl-module-content { margin: 0 20px; }
 .mnc-infoseite .fl-module-photo .fl-module-content { margin-bottom: 1.6rem; }
 .mnc-infoseite li { margin-bottom: 1.6rem; }
@@ -58,9 +51,6 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .mnc-infoseite a:hover { text-decoration: none; border-color: #db3832; }
 .mnc-infoseite a:after { border-bottom: 1px solid #FFF; }
 .mnc-infoseite .mnc-subtitle { font-size: 24px; line-height: 1.5; }
-
-[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]):after { padding-left: 0.4em; font-size: 18px; font-family: 'Material Icons'; content: "launch"; -webkit-font-feature-settings: 'liga'; color: #858585; }
-[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]):hover:after { color: #db3832; }
 
 /* RGB */
 body { font-family: 'Open Sans', sans-serif; }
@@ -128,3 +118,6 @@ a.btn { text-decoration: none !important; color: #FFFFFF; }
 .mi-textbox .fl-module-content { min-height: 430px; }
 
 .sub-menu a:hover { text-decoration: none; }
+
+.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]):after { padding-left: 0.4em; font-size: 18px; font-family: 'Material Icons'; content: "launch"; -webkit-font-feature-settings: 'liga'; color: #858585; }
+.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]):hover:after { color: #db3832; }
