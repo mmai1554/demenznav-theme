@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
     }).attr('target', '_blank').addClass('mnc-ext-link').each(function(index) {
         let me = $(this);
         if (me.attr('title') === undefined) {
-            let linkTitle = me.html() + " in neuem Tabreiter oder Fenster öffnen...";
+            let linkTitle = 'URL ' + me.attr('href') + " in neuem Tabreiter oder Fenster öffnen...";
             me.attr('title', linkTitle);
         }
     });
