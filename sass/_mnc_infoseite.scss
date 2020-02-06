@@ -1,34 +1,3 @@
-.mnc-datatable {
-  tr:nth-child(odd) {
-    background: #EEE;
-  }
-
-  tr:nth-child(even) {
-    background: #FFF;
-  }
-
-  th {
-    white-space: nowrap;
-    padding: 10px 20px;
-    border: 0 solid grey;
-  }
-
-  td {
-    border: 0 solid grey;
-    padding: 10px 20px;
-    text-align: right;
-  }
-
-  tr:nth-child(odd) {
-    background: #eeeeee;
-  }
-
-  td:nth-child(1) {
-    text-align: left;
-  }
-}
-
-
 .mnc-infoseite {
   .fl-module-rich-text, .fl-module-photo {
     .fl-module-content {
@@ -84,20 +53,3 @@
     line-height: 1.5;
   }
 }
-
-[href^="http"]:not([href*="devdemenz.reboom.de"]):not([href*="demenzwegweiser-sh.de"]) {
-  &:after {
-    // inline-block solves underscore problem but does not work in Safari, mmai
-    // display:inline-block;
-    padding-left:0.4em;
-    font-size:18px;
-    font-family: 'Material Icons';
-    content: "launch";
-    -webkit-font-feature-settings: 'liga';
-    color: #858585;
-  }
-  &:hover:after {
-    color: $color_mnc_rot;
-  }
-}
-
