@@ -118,5 +118,5 @@ a.btn { text-decoration: none !important; color: #FFFFFF; }
 
 .sub-menu a:hover { text-decoration: none; }
 
-.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]):after, .mnc-ext-link:after { padding-left: 0.4em; font-size: inherit; font-family: 'Material Icons'; content: "launch"; -webkit-font-feature-settings: 'liga'; color: #858585; border-bottom: 1px solid #FFFFFF; }
+.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]):after, .mnc-ext-link:after { padding-left: 0.4em; font-size: inherit; font-family: 'Material Icons'; text-transform: none !important; content: "launch"; -webkit-font-feature-settings: 'liga'; color: #858585; border-bottom: 1px solid #FFFFFF; }
 .mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]):hover:after, .mnc-ext-link:hover:after { color: #db3832; }

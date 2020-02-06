@@ -262,6 +262,7 @@ a.btn {
       padding-left:0.4em;
       font-size:inherit;
       font-family: 'Material Icons';
+      text-transform: none !important;
       content: "launch";
       -webkit-font-feature-settings: 'liga';
       color: #858585;
