@@ -1,0 +1,29 @@
+.mnc-datatable {
+  tr:nth-child(odd) {
+    background: #EEE;
+  }
+
+  tr:nth-child(even) {
+    background: #FFF;
+  }
+
+  th {
+    white-space: nowrap;
+    padding: 10px 20px;
+    border: 0 solid grey;
+  }
+
+  td {
+    border: 0 solid grey;
+    padding: 10px 20px;
+    text-align: right;
+  }
+
+  tr:nth-child(odd) {
+    background: #eeeeee;
+  }
+
+  td:nth-child(1) {
+    text-align: left;
+  }
+}
