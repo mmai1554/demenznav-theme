@@ -96,7 +96,7 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 .mnc-treffer { margin: 0 0 30px 0; border-bottom: 1px solid #d6d6d6; }
 
 .mnc-einrichtung hr { margin: 30px 0 25px 0; }
-.mnc-einrichtung .mnc-iconlist { padding-top: 2px; }
+.mnc-einrichtung .mnc-iconlist { padding-top: 0.5rem; }
 .mnc-einrichtung .fl-icon-text { padding-left: 10px; }
 .mnc-einrichtung .fl-icon { vertical-align: top; }
 
