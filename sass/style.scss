@@ -272,10 +272,12 @@ a.btn {
   }
 }
 
-h1,h2,h3,h4 {
+h1,h2,h3,h4,.fl-icon,.fl-icon-text {
   a.mnc-ext-link {
     &:after {
       content:"" !important;
+      padding:inherit !important;
+      border:inherit !important;
     }
   }
 }
