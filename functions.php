@@ -66,7 +66,7 @@ add_shortcode( 'searchhome', function () {
 
 
 add_shortcode( 'copyright', function ( $atts ) {
-	return sprintf( '<span>© %s kompetenzzentrum Demenz in Schleswig-Holstein</span>', date( 'Y' ) );
+	return sprintf( '<span>© %s Alzheimer Gesellschaft Schleswig-Holstein e.V. Selbsthilfe Demenz / Landesverband</span>', date( 'Y' ) );return sprintf( '<span>© %s kompetenzzentrum Demenz in Schleswig-Holstein</span>', date( 'Y' ) );
 } );
 
 
