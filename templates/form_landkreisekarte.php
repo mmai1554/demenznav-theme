@@ -24,33 +24,27 @@ if ( ! isset( $lk ) ) {
 <div class="col-md-4 py-3">
 	<?php echo do_shortcode('[landkreisesh]'); ?>
 </div>
-<div class="col-md-8 list-kreise">
+<div class="col-md-8 mnc-list-kreise mnc-list-material">
     <div class="row">
         <div class="col">
-            <ul class="arrowlink">
-                <li><?= $lk[0] ?></li>
-                <li><?= $lk[1] ?></li>
-                <li><?= $lk[2] ?></li>
-                <li><?= $lk[3] ?></li>
-                <li><?= $lk[4] ?></li>
-                <li><?= $lk[5] ?></li>
+            <ul>
+                <?php foreach([0,1,2,3,4,5] as $index): ?>
+                <?= \mnc\Maln::icon_li_material($lk[$index], 'arrow_forward_ios'); ?>
+                <?php endforeach; ?>
             </ul>
         </div>
         <div class="col">
-            <ul class="arrowlink">
-                <li><?= $lk[6] ?></li>
-                <li><?= $lk[7] ?></li>
-                <li><?= $lk[8] ?></li>
-                <li><?= $lk[9] ?></li>
-                <li><?= $lk[10] ?></li>
+            <ul>
+		        <?php foreach([6,7,8,9,10] as $index): ?>
+			        <?= \mnc\Maln::icon_li_material($lk[$index], 'arrow_forward_ios'); ?>
+		        <?php endforeach; ?>
             </ul>
         </div>
         <div class="col">
-            <ul class="arrowlink">
-                <li><?= $lk[11] ?></li>
-                <li><?= $lk[12] ?></li>
-                <li><?= $lk[13] ?></li>
-                <li><?= $lk[14] ?></li>
+            <ul>
+		        <?php foreach([11,12,13,14] as $index): ?>
+			        <?= \mnc\Maln::icon_li_material($lk[$index], 'arrow_forward_ios'); ?>
+		        <?php endforeach; ?>
             </ul>
         </div>
     </div>
