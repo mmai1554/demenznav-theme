@@ -83,3 +83,17 @@ $element_heights:50px;
     width: auto;
   }
 }
+
+.mnc-list-kreise {
+  .fl-icon {
+    vertical-align: top;
+    padding-top: 9px;
+  }
+  i.mnc-iconlist {
+    color:$color_blau;
+    font-size:14px;
+  }
+  li {
+    margin-bottom:15px;
+  }
+}

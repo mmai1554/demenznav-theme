@@ -26,6 +26,10 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .searchhome input[type=submit]:hover, .searchhome button:hover { border: 1px solid #cc181f !important; }
 .searchhome .fl-button i { font-size: 1.3em; height: auto; margin-right: 8px; vertical-align: middle; width: auto; }
 
+.mnc-list-kreise .fl-icon { vertical-align: top; padding-top: 9px; }
+.mnc-list-kreise i.mnc-iconlist { color: #3f73b2; font-size: 14px; }
+.mnc-list-kreise li { margin-bottom: 15px; }
+
 .mnc-mapsearch-container { position: relative; }
 .mnc-mapsearch-container .mnc-mapsearch-container-inner { min-height: 100vh; position: relative; }
 .mnc-mapsearch-container .mnc-mapcontainer { min-height: 600px; width: 100%; }
@@ -80,7 +84,6 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 
 .arrowlink li { list-style-type: none; }
 .arrowlink a { padding: 10px 5px 10px 20px; display: block; position: relative; }
-.arrowlink li a:before { font-family: 'Ultimate-Icons' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; content: "\e9fa"; position: absolute; left: 0; top: 14px; display: inline-block; color: #2e73b7; }
 
 .mi-list-icons ul { padding-inline-start: 0; margin-top: 20px; }
 .mi-list-icons li { list-style-type: none; margin-bottom: 5px; }
@@ -101,6 +104,9 @@ h4 { letter-spacing: 1.1px; text-transform: uppercase; }
 .mnc-einrichtung .fl-icon { vertical-align: top; }
 
 .material-icons { font-family: 'Material Icons'; font-weight: normal; font-style: normal; font-size: 24px; /* Preferred icon size */ display: inline-block; line-height: 1; text-transform: none; letter-spacing: normal; word-wrap: normal; white-space: nowrap; direction: ltr; /* Support for all WebKit browsers. */ -webkit-font-smoothing: antialiased; /* Support for Safari and Chrome. */ text-rendering: optimizeLegibility; /* Support for Firefox. */ -moz-osx-font-smoothing: grayscale; /* Support for IE. */ font-feature-settings: 'liga'; }
+
+.mnc-list-material li { list-style-type: none; }
+.mnc-list-material ul { list-style: none; padding: 0; }
 
 .btn-primary { background: #4178a5; color: #FFF; border: 1px solid #305879; }
 
