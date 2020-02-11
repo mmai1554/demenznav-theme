@@ -63,25 +63,25 @@ $element_heights:50px;
   }
 
 
-  input[type=submit], button {
-    padding-top:8px;
-    height:$element_heights;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 800;
-    border: 1px solid $color_akzent !important;
-    &:hover {
-      border: 1px solid $color_hover !important;
-    }
-  }
-
-  .fl-button i {
-    font-size: 1.3em;
-    height: auto;
-    margin-right: 8px;
-    vertical-align: middle;
-    width: auto;
-  }
+  //input[type=submit], button {
+  //  padding-top:8px;
+  //  height:$element_heights;
+  //  text-transform: uppercase;
+  //  letter-spacing: 2px;
+  //  font-weight: 800;
+  //  border: 1px solid $color_akzent !important;
+  //  &:hover {
+  //    border: 1px solid $color_hover !important;
+  //  }
+  //}
+  //
+  //.fl-button i {
+  //  font-size: 1.3em;
+  //  height: auto;
+  //  margin-right: 8px;
+  //  vertical-align: middle;
+  //  width: auto;
+  //}
 }
 
 .mnc-list-kreise {
