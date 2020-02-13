@@ -1,32 +1,36 @@
-input[type=submit], input[type=button], button {
-  padding: 10px 16px;
-  border: 1px solid $color_akzent !important;
-  &:hover {
-    border: 1px solid $color_hover !important;
+.mnc-button {
+  input[type=submit], input[type=button], button {
+    padding: 10px 16px;
+    border: 1px solid $color_akzent !important;
+    &:hover {
+      border: 1px solid $color_hover !important;
+    }
   }
+
+  input[type=submit], input[type=button], button, .fl-button-text {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    font-size:0.9rem;
+  }
+
+  button:hover, input[type=button]:hover, input[type=submit]:hover {
+    background-color: #cc181f;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .fl-button i, .fl-builder-content .fl-button i {
+    font-size: 1.3em;
+    height: auto;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: auto;
+  }
+
+  .fl-builder-content .fl-button:hover {
+    text-decoration: none;
+  }
+
 }
 
-input[type=submit], input[type=button], button, .fl-button-text {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 800;
-  font-size:0.9rem;
-}
-
-button:hover, input[type=button]:hover, input[type=submit]:hover {
-  background-color: #cc181f;
-  color: #fff;
-  text-decoration: none;
-}
-
-.fl-button i, .fl-builder-content .fl-button i {
-  font-size: 1.3em;
-  height: auto;
-  margin-right: 3px;
-  vertical-align: middle;
-  width: auto;
-}
-
-.fl-builder-content .fl-button:hover {
-  text-decoration: none;
-}
