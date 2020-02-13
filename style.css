@@ -52,8 +52,9 @@ a:hover, .fl-builder a:hover { text-decoration: underline; }
 .mnc-infoseite a:hover { text-decoration: none; border-color: #db3832; }
 .mnc-infoseite .mnc-subtitle { font-size: 24px; line-height: 1.5; }
 
-.mnc-button input[type=submit], .mnc-button input[type=button], .mnc-button button { padding: 10px 16px; border: 1px solid #cb463b !important; }
-.mnc-button input[type=submit]:hover, .mnc-button input[type=button]:hover, .mnc-button button:hover { border: 1px solid #cc181f !important; }
+.mnc-button input[type=submit], .mnc-button input[type=button], .mnc-button button, .mnc-button a[role=button] { padding: 10px 16px; border: 1px solid #cb463b !important; }
+.mnc-button input[type=submit]:hover, .mnc-button input[type=button]:hover, .mnc-button button:hover, .mnc-button a[role=button]:hover { border: 1px solid #cc181f !important; }
+@media (max-width: 767px) { .mnc-button input[type=submit], .mnc-button input[type=button], .mnc-button button, .mnc-button a[role=button] { width: 100%; text-align: center; } }
 .mnc-button input[type=submit], .mnc-button input[type=button], .mnc-button button, .mnc-button .fl-button-text { text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.9rem; }
 .mnc-button button:hover, .mnc-button input[type=button]:hover, .mnc-button input[type=submit]:hover { background-color: #cc181f; color: #fff; text-decoration: none; }
 .mnc-button .fl-button i, .mnc-button .fl-builder-content .fl-button i { font-size: 1.3em; height: auto; margin-right: 3px; vertical-align: middle; width: auto; }

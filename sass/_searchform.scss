@@ -4,8 +4,8 @@
 $color_bg_searchmain_inactive: rgba(208, 204, 204, 0.91);
 $color_bg_searchmain_active: rgba(255, 255, 255, 0.9);
 $color_placeholder: #a4a9af;
-$color_element_border:#cfd4da;
-$element_heights:50px;
+$color_element_border: #cfd4da;
+$element_heights: 50px;
 
 .searchhome {
 
@@ -58,30 +58,10 @@ $element_heights:50px;
   }
 
   select, input {
-    height:$element_heights;
+    height: $element_heights;
     padding: 10px 20px;
   }
 
-
-  //input[type=submit], button {
-  //  padding-top:8px;
-  //  height:$element_heights;
-  //  text-transform: uppercase;
-  //  letter-spacing: 2px;
-  //  font-weight: 800;
-  //  border: 1px solid $color_akzent !important;
-  //  &:hover {
-  //    border: 1px solid $color_hover !important;
-  //  }
-  //}
-  //
-  //.fl-button i {
-  //  font-size: 1.3em;
-  //  height: auto;
-  //  margin-right: 8px;
-  //  vertical-align: middle;
-  //  width: auto;
-  //}
 }
 
 .mnc-list-kreise {
@@ -89,11 +69,13 @@ $element_heights:50px;
     vertical-align: top;
     padding-top: 9px;
   }
+
   i.mnc-iconlist {
-    color:$color_blau;
-    font-size:14px;
+    color: $color_blau;
+    font-size: 14px;
   }
+
   li {
-    margin-bottom:15px;
+    margin-bottom: 15px;
   }
 }

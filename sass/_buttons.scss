@@ -1,12 +1,19 @@
 .mnc-button {
-  input[type=submit], input[type=button], button {
+  input[type=submit], input[type=button], button, a[role=button] {
     padding: 10px 16px;
     border: 1px solid $color_akzent !important;
     &:hover {
       border: 1px solid $color_hover !important;
     }
+    @include bp(mobile) {
+      width:100%;
+      text-align: center;
+    }
   }
 
+
+
+  // fl-button text is a span
   input[type=submit], input[type=button], button, .fl-button-text {
     text-transform: uppercase;
     letter-spacing: 2px;
