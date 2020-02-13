@@ -15,6 +15,9 @@ $arrMapTaxonomies = [
 ];
 if ( array_key_exists( $taxonomy, $arrMapTaxonomies ) ) {
 	$terms_for_badges = get_the_terms( $post, $arrMapTaxonomies[ $taxonomy ] );
+	if(false === $terms_for_badges) {
+	    $terms_for_badges = [];
+    }
 } else {
 	$terms_for_badges = [];
 }
