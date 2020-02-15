@@ -1,0 +1,7 @@
+.mnc-footertext {
+  p {
+    @include mnc-headline();
+    @include mnc-h4();
+    line-height:1em;
+  }
+}

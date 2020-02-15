@@ -1,11 +1,26 @@
+@mixin mnc-headline {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color:#333;
+}
+@mixin mnc-h4 {
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color:#333;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-  color:#333;
+  @include mnc-headline();
+}
+h4 {
+  @include mnc-h4();
+}
+h5 {
+  font-weight: 700;
 }
 
 a, .fl-icon-text a {
@@ -14,15 +29,6 @@ a, .fl-icon-text a {
   &:hover {
     color: $color2;
   }
-}
-
-h5 {
-  font-weight: 700;
-}
-
-h4 {
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
 }
 
 .material-icons {
