@@ -1,0 +1,41 @@
+.arrowlink {
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    padding: 10px 5px 10px 20px;
+    display: block;
+    position: relative;
+  }
+}
+
+.tax-klassifikation {
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  hr {
+    margin: 30px 0 25px 0;
+    border: 0;
+    height: 1px;
+    background: #e2e2e2;
+  }
+}
+
+.btn-primary {
+  background: #4178a5;
+  color: #FFF;
+  border: 1px solid #305879;
+}
+
+a.btn {
+  text-decoration: none !important;
+  color: #FFFFFF;
+}
+
+
+.mnc-container-liste {
+  padding: 0 30px 0 30px;
+}
+

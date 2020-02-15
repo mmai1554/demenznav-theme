@@ -1,0 +1,50 @@
+@mixin carddesign($color_bg, $color_text) {
+  .fl-module-content {
+    background-color: $color_bg;
+  }
+  .fl-callout-text, .fl-callout-title, .fl-callout-cta-link {
+    color: $color_text !important;
+  }
+}
+
+.mi-textbox {
+  .fl-callout-title {
+    padding: 10px 30px 0 30px;
+  }
+
+  .fl-callout-text-wrap {
+    padding: 10px 30px 20px 30px;
+  }
+  .fl-module-content {
+    min-height: 430px;
+  }
+}
+
+.mi-card-row {
+
+  .fl-callout-content {
+    min-height: 395px;
+  }
+
+  .fl-col-group .fl-col:nth-child(1) .mi-textbox {
+    @include carddesign($card_2_bg, $card_1_fg);
+  }
+
+  .fl-col-group .fl-col:nth-child(2) .mi-textbox {
+    @include carddesign($card_5_bg, $card_5_fg);
+  }
+
+  .fl-col-group .fl-col:nth-child(3) .mi-textbox {
+    @include carddesign($card_3_bg, $card_3_fg);
+  }
+
+  &.mi-style2 {
+    .fl-col-group .fl-col:nth-child(1) .mi-textbox {
+      @include carddesign($color2, $card_1_fg);
+    }
+
+    .fl-col-group .fl-col:nth-child(2) .mi-textbox {
+      @include carddesign($card_1_bg, $card_1_fg);
+    }
+  }
+}

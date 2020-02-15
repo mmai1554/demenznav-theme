@@ -1,0 +1,85 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color:#333;
+}
+
+a, .fl-icon-text a {
+  color: $color_mi_grau;
+  // text-decoration: underline
+  &:hover {
+    color: $color2;
+  }
+}
+
+h5 {
+  font-weight: 700;
+}
+
+h4 {
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.mnc-ext [href^="http"]:not([href*="devdemenz.test"]):not([href*="demenzwegweiser-sh.de"]), .mnc-ext-link {
+  &:after {
+    // inline-block solves underscore problem but does not work in Safari, mmai
+    // display:inline-block;
+    padding-left: 0.4em;
+    font-size: inherit;
+    font-family: 'Material Icons';
+    text-transform: none !important;
+    content: "launch";
+    -webkit-font-feature-settings: 'liga';
+    color: #858585;
+    border-bottom: 1px solid #FFFFFF;
+  }
+
+  &:hover:after {
+    color: $color_mnc_rot;
+  }
+}
+
+.mnc-no-ext, h1,h2,h3,h4,.fl-icon,.fl-icon-text {
+  a.mnc-ext-link {
+    &:after {
+      content:"" !important;
+      padding:inherit !important;
+      border:inherit !important;
+    }
+  }
+}
+
+
+.mnc-bg-white {
+  background-color: #FFFFFF;
+}

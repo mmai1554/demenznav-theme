@@ -1,0 +1,96 @@
+.mnc-mapsearch-container {
+  position:relative;
+
+  .mnc-mapsearch-container-inner {
+    min-height:100vh;
+    position: relative;
+  }
+
+  .mnc-mapcontainer {
+    min-height:600px;
+    width:100%;
+  }
+  .mnc-map-sticky {
+    position:sticky;
+    top:122px;
+  }
+  .mnc-map-scroll {
+    position:relative;
+  }
+  .mnc-trefferliste {
+    padding:20px 40px 20px 20px;
+  }
+
+  #gmapresults {
+    height:100%;
+  }
+
+}
+
+.mnc-einrichtung {
+  hr {
+    margin: 30px 0 25px 0;
+  }
+
+  .mnc-iconlist {
+    padding-top: 0.5rem;
+  }
+
+  .fl-icon-text {
+    padding-left: 10px;
+  }
+
+  .fl-icon {
+    vertical-align: top;
+  }
+}
+
+.mi-list-icons {
+  ul {
+    padding-inline-start: 0;
+    margin-top: 20px;
+  }
+
+  li {
+    list-style-type: none;
+    margin-bottom: 5px;
+  }
+
+  i {
+    // color:$color4;
+    font-size: 18px;
+  }
+}
+
+/**
+wraps the badges lines
+ */
+.badges {
+  margin-bottom: 20px;
+}
+
+/**
+enhance a single badge
+ */
+.badge {
+  padding: .3em .5em;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+/**
+wraps the line with the count of search results
+container für die Anzahl Treffer
+ */
+.mnc-treffer {
+  margin: 0 0 30px 0;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+/**
+Do Not show the container providing the informations for the cards
+ */
+#MyPosition {
+  display: none;
+  visibility: hidden;
+}
