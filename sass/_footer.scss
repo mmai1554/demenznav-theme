@@ -3,5 +3,8 @@
     @include mnc-headline();
     @include mnc-h4();
     line-height:1em;
+    a {
+      line-height:0.9em;
+    }
   }
 }
