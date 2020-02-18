@@ -7,11 +7,11 @@
   header {
     display:block;
     position:static !important;
-    button {
-      display:none;
-    }
   }
-  header .fl-node-5dc2b3692481b {
+  header button {
+    display:none;
+  }
+  header .fl-node-5dc2b3692481b, header .fl-node-5d3c2a151444d{
     display:none !important;
   }
   div.mnc-mapsearch-container-inner div.row div.col-md-6:first-child{
@@ -34,10 +34,24 @@
   div.mnc-mapsearch-container-inner div.mi-list-icons li:last-child {
     display:none;
   }
-  #MncMapContainer {
+  #MncMapContainer{
     page-break-inside:avoid;
   }
   #fl-to-top {
     display:none !important;
+  }
+  /*statische Seite allgemein*/
+  div.row {
+    display:block;
+    flex:none;
+    page-break-before:avoid;
+  }
+  /*Glossar */
+  div.uabb-blog-posts-masonary {
+    height:auto !important;
+  }
+  div.uabb-blog-posts-masonary div.uabb-post-wrapper {
+    position:static !important;
+    page-break-inside:avoid;
   }
 }
