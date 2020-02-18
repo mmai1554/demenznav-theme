@@ -9,8 +9,8 @@
       width:100%;
       text-align: center;
     }
+    white-space: nowrap;
   }
-
 
 
   // fl-button text is a span
@@ -40,4 +40,9 @@
   }
 
 }
+
+// this is some stuff from inline customer but not used  anymore?
+//.fl-builder-content a.fl-button, .fl-builder-content a.fl-button:visited {
+//  padding:10px 16px;
+//}
 
