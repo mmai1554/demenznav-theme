@@ -2,9 +2,21 @@
   p {
     @include mnc-headline();
     @include mnc-h4();
-    line-height:1em;
+    line-height: 1em;
+
     a {
-      line-height:0.9em;
+      line-height: 0.9em;
     }
   }
 }
+
+.mnc-icons-footer {
+  .fl-icon {
+    min-width: 30px;
+    text-align: center;
+    i {
+      float: none;
+    }
+  }
+}
+
