@@ -1,0 +1,43 @@
+@media print {
+  body {
+    margin:0 !important;
+    padding:0 !important;
+    page-break-after:avoid;
+  }
+  header {
+    display:block;
+    position:static !important;
+    button {
+      display:none;
+    }
+  }
+  header .fl-node-5dc2b3692481b {
+    display:none !important;
+  }
+  div.mnc-mapsearch-container-inner div.row div.col-md-6:first-child{
+    display:block !important;
+    position:static !important;
+    flex:none !important;
+  }
+  div.mnc-mapsearch-container-inner div.row{
+    display:block !important;
+    position:static !important;
+    flex:none !important;
+  }
+  div.mnc-mapsearch-container-inner div.row div.col-md-6 {
+    max-width:100%;
+  }
+  div.mnc-mapsearch-container-inner div.row div.mnc-einrichtung, footer {
+    page-break-inside:avoid;
+  }
+  /* Link Routenplaner ausblenden */
+  div.mnc-mapsearch-container-inner div.mi-list-icons li:last-child {
+    display:none;
+  }
+  #MncMapContainer {
+    page-break-inside:avoid;
+  }
+  #fl-to-top {
+    display:none !important;
+  }
+}
