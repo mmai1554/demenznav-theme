@@ -89,3 +89,13 @@ a, .fl-icon-text a {
 .mnc-bg-white {
   background-color: #FFFFFF;
 }
+
+.mnc-li-space {
+  li {
+    margin-bottom:1.6rem;
+  }
+  ul, ol {
+    padding:0;
+  }
+}
+

@@ -1,13 +1,15 @@
 .mnc-infoseite {
+
   .fl-module-rich-text, .fl-module-photo {
     .fl-module-content {
-      margin:0 20px;
+      margin: 0 20px;
 
     }
   }
+
   .fl-module-photo {
     .fl-module-content {
-      margin-bottom:1.6rem;
+      margin-bottom: 1.6rem;
     }
   }
 
@@ -18,9 +20,9 @@
   h3 {
     margin-top: 3.2rem;
     margin-bottom: 1.6rem;
-    //&:first-child {
-    //  margin-top: 1rem;
-    //}
+  }
+  h3:first-child {
+    margin-top: 1rem;
   }
 
   p {
@@ -41,7 +43,6 @@
     &:hover {
       text-decoration: none;
       border-color: $color_mnc_rot;
-      // border-bottom: 1px solid $color_mnc_rot;
     }
   }
 
