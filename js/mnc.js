@@ -11,6 +11,8 @@ jQuery(document).ready(function ($) {
             me.attr('title', linkTitle);
         }
     });
-    // $("a[target='_blank']:not(:has(img,div))").addClass('mnc-ext-link');
-    // $("a:not(:has(img,div))").addClass('mnc-ext-link');
+    $('#MNCPrint').click(function(e){
+        e.preventDefault();
+        window.print();
+    });
 });
