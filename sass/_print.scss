@@ -41,11 +41,27 @@
     display:none !important;
   }
   /*statische Seite allgemein*/
+  /*Seitenumbruch nach Header vermeiden*/
   div.row {
     display:block;
     flex:none;
     page-break-before:avoid;
   }
+  /*Die folgenden beiden Blöcke verhindern
+      Seitenumbrüche an bestimmten Stellen, was
+      das Satzbild verbessert, aber - speziell im Fall
+      des zweiten Block - zu halb gefüllten Seiten führen kann.
+      Implementierung nach Test und Geschmack zu entscheiden.
+      Ich persönlich finde die erste Regel gut,
+      die zweite haut ein bisschen drüber, daher hier auskommentiert.*/
+  /*Seitenumbrüche in Absätzen vermeiden*/
+  div.row p, div.row li{
+    page-break-inside:avoid;
+  }
+  /*Seitenumbrüche zwischen Überschrift und Text vermeiden
+  div.fl-rich-text{
+      page-break-inside:avoid;
+  }*/
   /*Glossar */
   div.uabb-blog-posts-masonary {
     height:auto !important;
@@ -53,5 +69,31 @@
   div.uabb-blog-posts-masonary div.uabb-post-wrapper {
     position:static !important;
     page-break-inside:avoid;
+  }
+  /* Ausblenden Suchmaske Startseite */
+  .fl-node-5d5563664da55 {
+    display:none;
+  }
+  /* Ausblenden Willkommenstext auf der Startseite mit Bezug auf Suchmaske,
+      Ersetzung durch Teiltext.
+      Ein etwas kruder Hack, zumal festverdrahteter Content
+      im CSS dazugehört.
+      Nur zu implementieren, wenn wirklich gewünscht ...
+      */
+  .fl-node-5d3e9aa05b7ba p{
+    visibility:hidden;
+    overflow:hidden;
+    line-height:0;
+  }
+  .fl-node-5d3e9aa05b7ba p:after{
+    content: "Der Demenzwegweiser-SH hilft Ihnen, Ansprechpartner und Informationen zum Thema Demenz in Schleswig-Holstein zu finden.";
+    display:block;
+    visibility:visible;
+    line-height:120%;
+    padding-bottom:2em;
+  }
+  /*Ausblenden Navigation Footer */
+  .fl-node-5d3db4ed38c18 {
+    display:none !important;
   }
 }
