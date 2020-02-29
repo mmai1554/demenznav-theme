@@ -25,10 +25,13 @@ h5 {
 
 a, .fl-icon-text a {
   color: $color_mi_grau;
-  // text-decoration: underline
   &:hover {
     color: $color2;
   }
+}
+
+a:hover, .fl-builder a:hover {
+  text-decoration: underline;
 }
 
 .material-icons {
