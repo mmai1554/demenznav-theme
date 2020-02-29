@@ -3,11 +3,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Silence is golden.
 }
 
-use mnc\Maln;
-use mnc\Umkreissuche;
+use mnc\Filtersuche;
 
 global $wp_query;
-$UK = new Umkreissuche();
+$UK = new Filtersuche();
+if ( $UK->isActionFired() ) {
+	$UK->validateInput();
+}
 
 ?>
 <?php get_header(); ?>
@@ -15,9 +17,9 @@ $UK = new Umkreissuche();
     <div class="mnc-mapsearch-container">
         <div class="mnc-mapsearch-container-inner">
             <div class="row no-gutters">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="mnc-trefferliste">
-                        <h2><?= single_term_title() ?></h2>
+                        <h2>Landkreis <?= single_term_title() ?></h2>
 						<?php
 						$UK->addLatLngToQuery( $wp_query );
 						?>
@@ -26,9 +28,9 @@ $UK = new Umkreissuche();
 						?>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky">
-                        <div id="gmapresults"></div>
+                <div class="col-md-4">
+                    <div id="MncMapContainer" class="mnc-trefferliste mnc-map-sticky" style="background-color: #EEE;">
+                        <h3>Filter</h3>
                     </div>
                 </div>
             </div>
