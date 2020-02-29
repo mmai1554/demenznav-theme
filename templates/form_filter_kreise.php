@@ -23,7 +23,7 @@ $seletced_plz = isset( $_GET[ Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GE
             <div class="col d-flex align-items-center">
                 <div class="ml-md-4">
                     <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
-                        <option value="">Nur folgende Kategorien anzeigen</option>
+                        <option value="">Alle Einrichtungen</option>
 						<?php foreach ( $taxonomies as $tax ) :
 							$mnc_einrichtung =  $_GET[ Umkreissuche::QUERY_VAR_KLASSIFIKATION ]  ?? '';
 							$selected = $mnc_einrichtung == 'K' . $tax->term_id ? ' selected' : '';
