@@ -17,7 +17,7 @@ if ( $UK->isActionFired() ) {
     <div class="mnc-mapsearch-container">
         <div class="mnc-mapsearch-container-inner">
             <div class="row no-gutters">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="mnc-trefferliste">
                         <h2>Landkreis <?= single_term_title() ?></h2>
 						<?php
@@ -28,9 +28,9 @@ if ( $UK->isActionFired() ) {
 						?>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div id="MncMapContainer" class="mnc-trefferliste mnc-map-sticky" style="background-color: #EEE;">
-                        <h3>Filter</h3>
+                <div class="col-md-6">
+                    <div id="MncMapContainer" class="mnc-mapcontainer mnc-map-sticky">
+                        <div id="gmapresults"></div>
                     </div>
                 </div>
             </div>
