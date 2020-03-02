@@ -2,7 +2,6 @@
 // Tabreiter:
 
 
-
 .searchhome {
 
   .nav-tabs {
@@ -62,8 +61,8 @@
 
 .searchform {
   button {
-    border-top-left-radius:0;
-    border-bottom-left-radius:0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 
@@ -84,9 +83,10 @@ Tabreiter Kreise
   li {
     list-style-type: none;
   }
+
   ul {
     list-style: none;
-    padding:0;
+    padding: 0;
   }
 }
 
@@ -94,6 +94,9 @@ Tabreiter Kreise
   .fl-icon {
     vertical-align: top;
     padding-top: 9px;
+    @include bp(mobile) {
+      padding-top:5px;
+    }
   }
 
   i.mnc-iconlist {
@@ -103,5 +106,21 @@ Tabreiter Kreise
 
   li {
     margin-bottom: 15px;
+    @include bp(mobile) {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+#volltext {
+  @include bp(mobile) {
+    input[type="text"], button, input[type="submit"] {
+      width: 100%;
+      border-radius: 4px;
+      margin:10px auto;
+    }
+    .input-group-append {
+      width: 100% !important;
+    }
   }
 }

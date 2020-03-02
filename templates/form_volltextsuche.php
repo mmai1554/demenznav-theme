@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <form role="search" method="get" id="searchform" class="searchform" action="<?php bloginfo( 'url' ) ?>">
-            <div class="mx-4">
+            <div class="mx-md-4">
                 <div class="input-group">
                     <label class="screen-reader-text" for="s">Volltextsuche nach:</label>
                     <input type="text" name="s" id="s" class="form-control" placeholder="Volltextsuche" aria-label="volltext"

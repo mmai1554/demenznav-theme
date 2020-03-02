@@ -19,7 +19,7 @@ $seletced_plz = isset( $_GET[ Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GE
 ?>
 <div class="searchhome">
     <form action="/umkreissuche/" method="get">
-        <div class="row">
+        <div class="row py-xs-3">
             <div class="col-md-5 d-flex align-items-center">
                 <div class="ml-md-4">
                     <select name="mnc-einrichtung" class="custom-select" id="Einrichtung">
@@ -33,7 +33,7 @@ $seletced_plz = isset( $_GET[ Umkreissuche::QUERY_VAR_PLZ ] ) ? 'value="' . $_GE
                     </select>
                 </div>
             </div>
-            <div class="col-md-5 d-flex align-items-center">
+            <div class="col-md-5 d-md-flex align-items-center">
                 <label for="mnc-plz" class="mr-md-4">in der Nähe von:</label>
                 <input name="mnc-plz" type="text" class="form-control" id="plz" placeholder="Bitte PLZ eingeben" aria-label="PLZ"
                        aria-describedby="plz" <?= $seletced_plz ?>>
