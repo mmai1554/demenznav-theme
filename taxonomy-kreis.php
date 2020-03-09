@@ -29,7 +29,7 @@ if ( $UK->isActionFired() ) {
                             <h2 class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Landkreis <?= single_term_title() ?>
                         </h2>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <form action="/umkreissuche/" method="get" class="py-2 mnc-defbutton">
                                 <div class="input-group p-2">
                                     <input type="text" name="mnc-plz" class="form-control" placeholder="Postleitzahl" aria-label="Postleitzahl" aria-describedby="PLZSuche">
