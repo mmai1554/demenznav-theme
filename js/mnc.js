@@ -1,6 +1,3 @@
-/**
- * Created by mmai on the birthday of the flying spagetthi monster
- */
 jQuery(document).ready(function ($) {
     $("a:not(:has(img,div,h1,h2,h3,h4))").filter(function () {
         return this.hostname && this.hostname !== location.hostname;
@@ -15,4 +12,5 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         window.print();
     });
+    $('.dropdown-toggle').dropdown();
 });

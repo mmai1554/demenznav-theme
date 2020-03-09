@@ -2,7 +2,9 @@
 
 use mnc\Maln;
 
-global $UK, $post, $legend; // Umkreissuche Object, only set when displaying results from Umkreissuche
+global $UK, $post, $legend; // Umkreissuche / Filtersuche Object, only set when displaying results from Umkreissuche
+
+
 
 $show_thumbs = FLTheme::get_setting( 'fl-archive-show-thumbs' );
 $show_full   = apply_filters( 'fl_archive_show_full', FLTheme::get_setting( 'fl-archive-show-full' ) );
@@ -14,7 +16,12 @@ $arrMapTaxonomies = [
 	'klassifikation' => 'kreis'
 ];
 if ( array_key_exists( $taxonomy, $arrMapTaxonomies ) ) {
-	$terms_for_badges = get_the_terms( $post, $arrMapTaxonomies[ $taxonomy ] );
+    if($taxonomy == 'kreis') {
+        $terms_for_badges = \mnc\Einrichtung::getBadgesForKreis($post);
+    }
+    if($taxonomy == 'klassifikation') {
+	    $terms_for_badges = \mnc\Einrichtung::getBadgesForKlassifikation($post);
+    }
 	if(false === $terms_for_badges) {
 	    $terms_for_badges = [];
     }
@@ -54,9 +61,12 @@ do_action( 'fl_before_post' ); ?>
         <p class="mb-2 text-muted"><?php the_field( 'untertitel' ); ?></p>
 	<?php endif; ?>
     <div class="badges">
+
+
 		<?php foreach ( $terms_for_badges as $badge_term ): ?>
-            <a href="<?php echo( get_category_link( $badge_term ) ); ?>"><span class="badge badge-secondary"><?php echo( $badge_term->name ); ?></span></a>
+            <a href="<?php echo( $badge_term['url']  ); ?>"><span class="badge badge-secondary"><?php echo( $badge_term['name'] ); ?></span></a>
 		<?php endforeach; ?>
+
 		<?php if ( $entfernung ): ?>
             <span class="badge badge-info"><?= $entfernung ?></span>
 		<?php endif; ?>

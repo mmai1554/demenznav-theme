@@ -20,6 +20,7 @@ function theme_enqueue_styles() {
 		// wp_enqueue_style( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/css/select2.min.css', [], null, 'all' );
 		// Scripts:
 		wp_enqueue_script( 'mncjs', get_stylesheet_directory_uri() . '/js/mnc.js' );
+		wp_enqueue_script( 'popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', ['jquery'], false, false );
 		// wp_enqueue_script( 'select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js', ['jquery'], false, false );
 	}
 }
